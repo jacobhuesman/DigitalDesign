@@ -1,0 +1,2096 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[     82694,       2095]
+NotebookOptionsPosition[     79587,       1995]
+NotebookOutlinePosition[     80100,       2015]
+CellTagsIndexPosition[     80057,       2012]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ StyleBox[
+  RowBox[{"Truth", " ", "Table", " ", "Generator"}], "Section"]], "Input",
+ CellChangeTimes->{{3.6832274814666348`*^9, 3.683227486520146*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"compTruth", "[", 
+   RowBox[{
+   "f1_Function", ",", "f2_Function", ",", "list_", ",", "form1_", ",", 
+    "form2_"}], "]"}], ":=", 
+  RowBox[{"(", 
+   RowBox[{"ClearAll", ";", "\[IndentingNewLine]", 
+    RowBox[{"forTable", " ", "=", " ", 
+     RowBox[{"Column", "[", "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"TableForm", "[", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"table", " ", "=", " ", 
+           RowBox[{"BooleanTable", "[", 
+            RowBox[{
+             RowBox[{"Append", "[", 
+              RowBox[{
+               RowBox[{"Append", "[", 
+                RowBox[{"list", ",", 
+                 RowBox[{"f1", "[", "list", "]"}]}], "]"}], ",", 
+               RowBox[{"f2", "[", "list", "]"}]}], "]"}], ",", "list"}], 
+            "]"}]}], ",", "\[IndentingNewLine]", 
+          RowBox[{"TableHeadings", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{"None", ",", 
+             RowBox[{"Append", "[", 
+              RowBox[{
+               RowBox[{"Append", "[", 
+                RowBox[{"list", ",", 
+                 RowBox[{"f1", "[", "list", "]"}]}], "]"}], ",", 
+               RowBox[{"f2", "[", "list", "]"}]}], "]"}]}], "}"}]}]}], "]"}], 
+        ","}], "\[IndentingNewLine]", "}"}], "\[IndentingNewLine]", "]"}]}], 
+    ";", "\[IndentingNewLine]", 
+    RowBox[{"cols", "=", 
+     RowBox[{
+      RowBox[{"Dimensions", "[", "table", "]"}], "[", 
+      RowBox[{"[", "2", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<Equal: \>\"", ",", 
+      RowBox[{
+       RowBox[{"table", "[", 
+        RowBox[{"[", 
+         RowBox[{"All", ",", 
+          RowBox[{"cols", "-", "1"}]}], "]"}], "]"}], "\[Equal]", 
+       RowBox[{"table", "[", 
+        RowBox[{"[", 
+         RowBox[{"All", ",", "cols"}], "]"}], "]"}]}]}], "]"}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Print", "[", "forTable", "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<Fn1: \>\"", ",", 
+      RowBox[{"BooleanMinimize", "[", 
+       RowBox[{
+        RowBox[{"f1", "[", "list", "]"}], ",", "form1"}], "]"}]}], "]"}], ";",
+     "\[IndentingNewLine]", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<Fn2: \>\"", ",", 
+      RowBox[{"BooleanMinimize", "[", 
+       RowBox[{
+        RowBox[{"f2", "[", "list", "]"}], ",", "form2"}], "]"}]}], "]"}], 
+    ";"}], "\[IndentingNewLine]", ")"}]}]], "Input",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGCQAmIQfd3v1XmDwteOK3RPXgbRayYk3QDRHrd33wTRc97/
+eQCiF0lYvQPzz9l8BvOzhSUNgfTzj1u1QfSNtTMNQfSOW/XmIDrp2gVXED3l
+ULYXiOa4essHRO87JR8BoutO+MWB9b24kQaiXX5aFILomt691SD6N/OBKSB6
+tfLbGSDaul5sP4j+YpBwFET/k667D6JD3rk/BtEBcsuegeggphAWIyAt9Eqf
+H0TH1ftJgOhWfz8FEB2kq6oNovfPirAE0UWrUhzB6rI43ED0pt3Hl4Postz8
+1SD658LU9SD6RIztBhB9qVBiJ4h+llWyB0Rb2T4+BKINGP6AabZHe8+DaJam
+2ddBtJj/tzsg2jrkyCMQLXJjPoMJKPzOq7KB6ITdstwgupEjDExnPjorD6Lj
+kjsUQDQAJSzJaw==
+  "]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.683227511716907*^9, 3.683227513749629*^9}, 
+   3.683227651620924*^9}],
+
+Cell["", "PageBreak",
+ PageBreakBelow->True],
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{"Problem", " ", 
+   RowBox[{"3.13", ".", "d"}]}], "Subsection"]], "Input",
+ CellChangeTimes->{{3.683227534857821*^9, 3.6832275399498453`*^9}, {
+  3.683227600510437*^9, 3.683227601041832*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{"compTruth", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Function", "[", 
+     RowBox[{"k", "&&", "m", "&&", "n"}], "]"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"Function", "[", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"!", "k"}], "||", "l", "||", 
+        RowBox[{"!", "m"}], "||", "n"}], ")"}], "&&", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"!", "k"}], "||", 
+        RowBox[{"!", "m"}], "||", "n", "||", "r"}], ")"}], "&&", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"!", "k"}], "||", 
+        RowBox[{"!", "m"}], "||", "n", "||", 
+        RowBox[{"!", "r"}]}], ")"}], "&&", "k", "&&", "m"}], "]"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "l", ",", "m", ",", "n", ",", "r"}], "}"}], ",", 
+    "\"\<POS\>\"", ",", "\"\<POS\>\""}], "]"}]}]], "Input",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGCQBmIQfd3v1XmDwteOK3RPXgbRayYk3QDRHrd33wTRc97/
+eQCiF0lYvQPzz9l8BvOzhSUNgfTzj1u1QfSNtTMNQfSOW/XmIDrp2gVXED3l
+ULYXiOa4essHRO87JR8BoutO+MWB9b24kQaiXX5aFILomt691SD6N/OBKSB6
+tfLbGSDaul5sP4j+YpBwFET/k667D6JD3rk/BtEBcsuegeggphAWIyAt9Eqf
+H0TH1ftJgOhWfz8FEB2kq6oNovfPirAE0UWrUhzB6rI43ED0pt3Hl4Postz8
+1SD658LU9SD6RIztBhB9qVBiJ4h+llWyB0Rb2T4+BKINGP6AabZHe8+DaJam
+2ddBtJj/tzsg2jrkyCMQ3fln9TewPcfMv4NorZ5ZUsZAevmZADkQPcXlHbsJ
+kDY/+oITRFv47FAG0WL6lzRBNAC1atOE
+  "]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Equal: \"\>", "\[InvisibleSpace]", "True"}],
+  SequenceForm["Equal: ", True],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.683230019934051*^9, 3.683230030859256*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TagBox[
+      TagBox[GridBox[{
+         {
+          TagBox["k",
+           HoldForm], 
+          TagBox["l",
+           HoldForm], 
+          TagBox["m",
+           HoldForm], 
+          TagBox["n",
+           HoldForm], 
+          TagBox["r",
+           HoldForm], 
+          TagBox[
+           RowBox[{"k", "&&", "m", "&&", "n"}],
+           HoldForm], 
+          TagBox[
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"!", "k"}], "||", "l", "||", 
+              RowBox[{"!", "m"}], "||", "n"}], ")"}], "&&", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"!", "k"}], "||", 
+              RowBox[{"!", "m"}], "||", "n", "||", "r"}], ")"}], "&&", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"!", "k"}], "||", 
+              RowBox[{"!", "m"}], "||", "n", "||", 
+              RowBox[{"!", "r"}]}], ")"}], "&&", "k", "&&", "m"}],
+           HoldForm]},
+         {"True", "True", "True", "True", "True", "True", "True"},
+         {"True", "True", "True", "True", "False", "True", "True"},
+         {"True", "True", "True", "False", "True", "False", "False"},
+         {"True", "True", "True", "False", "False", "False", "False"},
+         {"True", "True", "False", "True", "True", "False", "False"},
+         {"True", "True", "False", "True", "False", "False", "False"},
+         {"True", "True", "False", "False", "True", "False", "False"},
+         {"True", "True", "False", "False", "False", "False", "False"},
+         {"True", "False", "True", "True", "True", "True", "True"},
+         {"True", "False", "True", "True", "False", "True", "True"},
+         {"True", "False", "True", "False", "True", "False", "False"},
+         {"True", "False", "True", "False", "False", "False", "False"},
+         {"True", "False", "False", "True", "True", "False", "False"},
+         {"True", "False", "False", "True", "False", "False", "False"},
+         {"True", "False", "False", "False", "True", "False", "False"},
+         {"True", "False", "False", "False", "False", "False", "False"},
+         {"False", "True", "True", "True", "True", "False", "False"},
+         {"False", "True", "True", "True", "False", "False", "False"},
+         {"False", "True", "True", "False", "True", "False", "False"},
+         {"False", "True", "True", "False", "False", "False", "False"},
+         {"False", "True", "False", "True", "True", "False", "False"},
+         {"False", "True", "False", "True", "False", "False", "False"},
+         {"False", "True", "False", "False", "True", "False", "False"},
+         {"False", "True", "False", "False", "False", "False", "False"},
+         {"False", "False", "True", "True", "True", "False", "False"},
+         {"False", "False", "True", "True", "False", "False", "False"},
+         {"False", "False", "True", "False", "True", "False", "False"},
+         {"False", "False", "True", "False", "False", "False", "False"},
+         {"False", "False", "False", "True", "True", "False", "False"},
+         {"False", "False", "False", "True", "False", "False", "False"},
+         {"False", "False", "False", "False", "True", "False", "False"},
+         {"False", "False", "False", "False", "False", "False", "False"}
+        },
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxDividers->{
+         "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[2.0999999999999996`]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}}],
+       {None, OutputFormsDump`HeadedColumns}],
+      Function[BoxForm`e$, 
+       TableForm[
+       BoxForm`e$, 
+        TableHeadings -> {
+         None, {$CellContext`k, $CellContext`l, $CellContext`m, \
+$CellContext`n, $CellContext`r, 
+           And[$CellContext`k, $CellContext`m, $CellContext`n], 
+           And[
+            Or[
+             Not[$CellContext`k], $CellContext`l, 
+             Not[$CellContext`m], $CellContext`n], 
+            Or[
+             Not[$CellContext`k], 
+             Not[$CellContext`m], $CellContext`n, $CellContext`r], 
+            Or[
+             Not[$CellContext`k], 
+             Not[$CellContext`m], $CellContext`n, 
+             Not[$CellContext`r]], $CellContext`k, $CellContext`m]}}]]]},
+    {""}
+   },
+   DefaultBaseStyle->"Column",
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Column"]], "Print",
+ CellChangeTimes->{{3.683230019934051*^9, 3.683230030860799*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fn1: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"k", "&&", "m", "&&", "n"}]}],
+  SequenceForm["Fn1: ", 
+   And[$CellContext`k, $CellContext`m, $CellContext`n]],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.683230019934051*^9, 3.683230030861219*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fn2: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"k", "&&", "m", "&&", "n"}]}],
+  SequenceForm["Fn2: ", 
+   And[$CellContext`k, $CellContext`m, $CellContext`n]],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.683230019934051*^9, 3.6832300308615828`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.683227587302322*^9, 3.683227592499311*^9}, 
+   3.6832276581127577`*^9}],
+
+Cell["", "PageBreak",
+ PageBreakBelow->True],
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{"Problem", " ", 
+   RowBox[{"3.14", ".", "d"}]}], "Subsection"]], "Input",
+ CellChangeTimes->{{3.683227587302322*^9, 3.683227592499311*^9}, 
+   3.6832276581127577`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"compTruth", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Function", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"!", "k"}], "&&", 
+      RowBox[{"!", "m"}], "&&", "n"}], "||", 
+     RowBox[{"k", "&&", 
+      RowBox[{"!", "l"}], "&&", 
+      RowBox[{"!", "n"}]}], "||", 
+     RowBox[{
+      RowBox[{"!", "k"}], "&&", "m", "&&", 
+      RowBox[{"!", "n"}]}], "||", 
+     RowBox[{"l", "&&", "n"}]}], "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"Function", "[", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"!", "k"}], "||", 
+       RowBox[{"!", "l"}], "||", "n"}], ")"}], "&&", 
+     RowBox[{"(", 
+      RowBox[{"k", "||", "m", "||", "n"}], ")"}], "&&", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"!", "k"}], "||", "l", "||", 
+       RowBox[{"!", "n"}]}], ")"}], "&&", 
+     RowBox[{"(", 
+      RowBox[{"l", "||", 
+       RowBox[{"!", "m"}], "||", 
+       RowBox[{"!", "n"}]}], ")"}]}], "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "l", ",", "m", ",", "n"}], "}"}], ",", "\"\<POS\>\"", 
+   ",", "\"\<POS\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.683226284158401*^9, 3.683226462303055*^9}, {
+   3.683226838652186*^9, 3.6832268708829203`*^9}, 3.6832274208607407`*^9, {
+   3.683229869194656*^9, 3.683229894009623*^9}, {3.683229970564823*^9, 
+   3.683229975805331*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Equal: \"\>", "\[InvisibleSpace]", "True"}],
+  SequenceForm["Equal: ", True],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.683227619207767*^9, {3.6832298746411743`*^9, 3.683229894426906*^9}, {
+   3.683229963447715*^9, 3.683229976213723*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TagBox[
+      TagBox[GridBox[{
+         {
+          TagBox["k",
+           HoldForm], 
+          TagBox["l",
+           HoldForm], 
+          TagBox["m",
+           HoldForm], 
+          TagBox["n",
+           HoldForm], 
+          TagBox[
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"!", "k"}], "&&", 
+              RowBox[{"!", "m"}], "&&", "n"}], ")"}], "||", 
+            RowBox[{"(", 
+             RowBox[{"k", "&&", 
+              RowBox[{"!", "l"}], "&&", 
+              RowBox[{"!", "n"}]}], ")"}], "||", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"!", "k"}], "&&", "m", "&&", 
+              RowBox[{"!", "n"}]}], ")"}], "||", 
+            RowBox[{"(", 
+             RowBox[{"l", "&&", "n"}], ")"}]}],
+           HoldForm], 
+          TagBox[
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"!", "k"}], "||", 
+              RowBox[{"!", "l"}], "||", "n"}], ")"}], "&&", 
+            RowBox[{"(", 
+             RowBox[{"k", "||", "m", "||", "n"}], ")"}], "&&", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"!", "k"}], "||", "l", "||", 
+              RowBox[{"!", "n"}]}], ")"}], "&&", 
+            RowBox[{"(", 
+             RowBox[{"l", "||", 
+              RowBox[{"!", "m"}], "||", 
+              RowBox[{"!", "n"}]}], ")"}]}],
+           HoldForm]},
+         {"True", "True", "True", "True", "True", "True"},
+         {"True", "True", "True", "False", "False", "False"},
+         {"True", "True", "False", "True", "True", "True"},
+         {"True", "True", "False", "False", "False", "False"},
+         {"True", "False", "True", "True", "False", "False"},
+         {"True", "False", "True", "False", "True", "True"},
+         {"True", "False", "False", "True", "False", "False"},
+         {"True", "False", "False", "False", "True", "True"},
+         {"False", "True", "True", "True", "True", "True"},
+         {"False", "True", "True", "False", "True", "True"},
+         {"False", "True", "False", "True", "True", "True"},
+         {"False", "True", "False", "False", "False", "False"},
+         {"False", "False", "True", "True", "False", "False"},
+         {"False", "False", "True", "False", "True", "True"},
+         {"False", "False", "False", "True", "True", "True"},
+         {"False", "False", "False", "False", "False", "False"}
+        },
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxDividers->{
+         "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[2.0999999999999996`]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}}],
+       {None, OutputFormsDump`HeadedColumns}],
+      Function[BoxForm`e$, 
+       TableForm[
+       BoxForm`e$, 
+        TableHeadings -> {
+         None, {$CellContext`k, $CellContext`l, $CellContext`m, \
+$CellContext`n, 
+           Or[
+            And[
+             Not[$CellContext`k], 
+             Not[$CellContext`m], $CellContext`n], 
+            And[$CellContext`k, 
+             Not[$CellContext`l], 
+             Not[$CellContext`n]], 
+            And[
+             Not[$CellContext`k], $CellContext`m, 
+             Not[$CellContext`n]], 
+            And[$CellContext`l, $CellContext`n]], 
+           And[
+            Or[
+             Not[$CellContext`k], 
+             Not[$CellContext`l], $CellContext`n], 
+            Or[$CellContext`k, $CellContext`m, $CellContext`n], 
+            Or[
+             Not[$CellContext`k], $CellContext`l, 
+             Not[$CellContext`n]], 
+            Or[$CellContext`l, 
+             Not[$CellContext`m], 
+             Not[$CellContext`n]]]}}]]]},
+    {""}
+   },
+   DefaultBaseStyle->"Column",
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Column"]], "Print",
+ CellChangeTimes->{
+  3.683227619207767*^9, {3.6832298746411743`*^9, 3.683229894426906*^9}, {
+   3.683229963447715*^9, 3.683229976216679*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fn1: \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"!", "k"}], "||", 
+      RowBox[{"!", "l"}], "||", "n"}], ")"}], "&&", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"!", "k"}], "||", "l", "||", 
+      RowBox[{"!", "n"}]}], ")"}], "&&", 
+    RowBox[{"(", 
+     RowBox[{"k", "||", "m", "||", "n"}], ")"}], "&&", 
+    RowBox[{"(", 
+     RowBox[{"l", "||", 
+      RowBox[{"!", "m"}], "||", 
+      RowBox[{"!", "n"}]}], ")"}]}]}],
+  SequenceForm["Fn1: ", 
+   And[
+    Or[
+     Not[$CellContext`k], 
+     Not[$CellContext`l], $CellContext`n], 
+    Or[
+     Not[$CellContext`k], $CellContext`l, 
+     Not[$CellContext`n]], 
+    Or[$CellContext`k, $CellContext`m, $CellContext`n], 
+    Or[$CellContext`l, 
+     Not[$CellContext`m], 
+     Not[$CellContext`n]]]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.683227619207767*^9, {3.6832298746411743`*^9, 3.683229894426906*^9}, {
+   3.683229963447715*^9, 3.68322997621772*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fn2: \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"!", "k"}], "||", 
+      RowBox[{"!", "l"}], "||", "n"}], ")"}], "&&", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"!", "k"}], "||", "l", "||", 
+      RowBox[{"!", "n"}]}], ")"}], "&&", 
+    RowBox[{"(", 
+     RowBox[{"k", "||", "m", "||", "n"}], ")"}], "&&", 
+    RowBox[{"(", 
+     RowBox[{"l", "||", 
+      RowBox[{"!", "m"}], "||", 
+      RowBox[{"!", "n"}]}], ")"}]}]}],
+  SequenceForm["Fn2: ", 
+   And[
+    Or[
+     Not[$CellContext`k], 
+     Not[$CellContext`l], $CellContext`n], 
+    Or[
+     Not[$CellContext`k], $CellContext`l, 
+     Not[$CellContext`n]], 
+    Or[$CellContext`k, $CellContext`m, $CellContext`n], 
+    Or[$CellContext`l, 
+     Not[$CellContext`m], 
+     Not[$CellContext`n]]]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.683227619207767*^9, {3.6832298746411743`*^9, 3.683229894426906*^9}, {
+   3.683229963447715*^9, 3.6832299762187023`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{"Problem", " ", 
+   RowBox[{"3.15", ".", "e"}]}], "Subsection"]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.683227587302322*^9, 3.683227592499311*^9}, 
+   3.6832276581127577`*^9, 3.6832280465611067`*^9, {3.683229239242072*^9, 
+   3.6832292411967363`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"compTruth", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Function", "[", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"k", "||", "l", "||", "m"}], ")"}], "&&", 
+     RowBox[{"(", 
+      RowBox[{"k", "||", "m", "||", "n"}], ")"}], "&&", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"!", "k"}], "||", 
+       RowBox[{"!", "l"}], "||", 
+       RowBox[{"!", "m"}]}], ")"}], "&&", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"!", "k"}], "||", 
+       RowBox[{"!", "m"}], "||", 
+       RowBox[{"!", "n"}]}], ")"}]}], "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"Function", "[", 
+    RowBox[{
+     RowBox[{"k", "&&", 
+      RowBox[{"!", "m"}]}], "||", 
+     RowBox[{"k", "&&", 
+      RowBox[{"!", "l"}], "&&", 
+      RowBox[{"!", "n"}]}], "||", 
+     RowBox[{
+      RowBox[{"!", "k"}], "&&", "m"}], "||", 
+     RowBox[{
+      RowBox[{"!", "k"}], "&&", "l", "&&", "n"}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "l", ",", "m", ",", "n"}], "}"}], ",", "\"\<POS\>\"", 
+   ",", "\"\<SOP\>\""}], "]"}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.683226284158401*^9, 3.683226462303055*^9}, {
+   3.683226838652186*^9, 3.6832268708829203`*^9}, 3.6832274208607407`*^9, 
+   3.683228046561142*^9, {3.683229246174324*^9, 3.683229334712986*^9}, {
+   3.6832293770120363`*^9, 3.683229381025709*^9}, {3.6832300442107697`*^9, 
+   3.683230076514135*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Equal: \"\>", "\[InvisibleSpace]", "True"}],
+  SequenceForm["Equal: ", True],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.683228050088481*^9, 3.6832293353451967`*^9, 3.683229385268787*^9, {
+   3.6832300509027777`*^9, 3.683230076874648*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TagBox[
+      TagBox[GridBox[{
+         {
+          TagBox["k",
+           HoldForm], 
+          TagBox["l",
+           HoldForm], 
+          TagBox["m",
+           HoldForm], 
+          TagBox["n",
+           HoldForm], 
+          TagBox[
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"k", "||", "l", "||", "m"}], ")"}], "&&", 
+            RowBox[{"(", 
+             RowBox[{"k", "||", "m", "||", "n"}], ")"}], "&&", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"!", "k"}], "||", 
+              RowBox[{"!", "l"}], "||", 
+              RowBox[{"!", "m"}]}], ")"}], "&&", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"!", "k"}], "||", 
+              RowBox[{"!", "m"}], "||", 
+              RowBox[{"!", "n"}]}], ")"}]}],
+           HoldForm], 
+          TagBox[
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"k", "&&", 
+              RowBox[{"!", "m"}]}], ")"}], "||", 
+            RowBox[{"(", 
+             RowBox[{"k", "&&", 
+              RowBox[{"!", "l"}], "&&", 
+              RowBox[{"!", "n"}]}], ")"}], "||", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"!", "k"}], "&&", "m"}], ")"}], "||", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"!", "k"}], "&&", "l", "&&", "n"}], ")"}]}],
+           HoldForm]},
+         {"True", "True", "True", "True", "False", "False"},
+         {"True", "True", "True", "False", "False", "False"},
+         {"True", "True", "False", "True", "True", "True"},
+         {"True", "True", "False", "False", "True", "True"},
+         {"True", "False", "True", "True", "False", "False"},
+         {"True", "False", "True", "False", "True", "True"},
+         {"True", "False", "False", "True", "True", "True"},
+         {"True", "False", "False", "False", "True", "True"},
+         {"False", "True", "True", "True", "True", "True"},
+         {"False", "True", "True", "False", "True", "True"},
+         {"False", "True", "False", "True", "True", "True"},
+         {"False", "True", "False", "False", "False", "False"},
+         {"False", "False", "True", "True", "True", "True"},
+         {"False", "False", "True", "False", "True", "True"},
+         {"False", "False", "False", "True", "False", "False"},
+         {"False", "False", "False", "False", "False", "False"}
+        },
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxDividers->{
+         "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[2.0999999999999996`]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}}],
+       {None, OutputFormsDump`HeadedColumns}],
+      Function[BoxForm`e$, 
+       TableForm[
+       BoxForm`e$, 
+        TableHeadings -> {
+         None, {$CellContext`k, $CellContext`l, $CellContext`m, \
+$CellContext`n, 
+           And[
+            Or[$CellContext`k, $CellContext`l, $CellContext`m], 
+            Or[$CellContext`k, $CellContext`m, $CellContext`n], 
+            Or[
+             Not[$CellContext`k], 
+             Not[$CellContext`l], 
+             Not[$CellContext`m]], 
+            Or[
+             Not[$CellContext`k], 
+             Not[$CellContext`m], 
+             Not[$CellContext`n]]], 
+           Or[
+            And[$CellContext`k, 
+             Not[$CellContext`m]], 
+            And[$CellContext`k, 
+             Not[$CellContext`l], 
+             Not[$CellContext`n]], 
+            And[
+             Not[$CellContext`k], $CellContext`m], 
+            And[
+             Not[$CellContext`k], $CellContext`l, $CellContext`n]]}}]]]},
+    {""}
+   },
+   DefaultBaseStyle->"Column",
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Column"]], "Print",
+ CellChangeTimes->{
+  3.683228050088481*^9, 3.6832293353451967`*^9, 3.683229385268787*^9, {
+   3.6832300509027777`*^9, 3.683230076876747*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fn1: \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"!", "k"}], "||", 
+      RowBox[{"!", "l"}], "||", 
+      RowBox[{"!", "m"}]}], ")"}], "&&", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"!", "k"}], "||", 
+      RowBox[{"!", "m"}], "||", 
+      RowBox[{"!", "n"}]}], ")"}], "&&", 
+    RowBox[{"(", 
+     RowBox[{"k", "||", "l", "||", "m"}], ")"}], "&&", 
+    RowBox[{"(", 
+     RowBox[{"k", "||", "m", "||", "n"}], ")"}]}]}],
+  SequenceForm["Fn1: ", 
+   And[
+    Or[
+     Not[$CellContext`k], 
+     Not[$CellContext`l], 
+     Not[$CellContext`m]], 
+    Or[
+     Not[$CellContext`k], 
+     Not[$CellContext`m], 
+     Not[$CellContext`n]], 
+    Or[$CellContext`k, $CellContext`l, $CellContext`m], 
+    Or[$CellContext`k, $CellContext`m, $CellContext`n]]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.683228050088481*^9, 3.6832293353451967`*^9, 3.683229385268787*^9, {
+   3.6832300509027777`*^9, 3.6832300768776283`*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fn2: \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"k", "&&", 
+      RowBox[{"!", "l"}], "&&", 
+      RowBox[{"!", "n"}]}], ")"}], "||", 
+    RowBox[{"(", 
+     RowBox[{"k", "&&", 
+      RowBox[{"!", "m"}]}], ")"}], "||", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"!", "k"}], "&&", "l", "&&", "n"}], ")"}], "||", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"!", "k"}], "&&", "m"}], ")"}]}]}],
+  SequenceForm["Fn2: ", 
+   Or[
+    And[$CellContext`k, 
+     Not[$CellContext`l], 
+     Not[$CellContext`n]], 
+    And[$CellContext`k, 
+     Not[$CellContext`m]], 
+    And[
+     Not[$CellContext`k], $CellContext`l, $CellContext`n], 
+    And[
+     Not[$CellContext`k], $CellContext`m]]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.683228050088481*^9, 3.6832293353451967`*^9, 3.683229385268787*^9, {
+   3.6832300509027777`*^9, 3.683230076878474*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{"Problem", " ", "3.16", ".1"}], "Subsection"]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.683227587302322*^9, 3.683227592499311*^9}, 
+   3.6832276581127577`*^9, 3.6832280465611067`*^9, {3.683229239242072*^9, 
+   3.6832292411967363`*^9}, {3.683231033453532*^9, 3.683231035469686*^9}}],
+
+Cell[BoxData[
+ RowBox[{"compTruth", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Function", "[", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"k", "&&", "l"}], "\[Xor]", "m"}], ")"}], "||", 
+     RowBox[{
+      RowBox[{"!", "m"}], "&&", 
+      RowBox[{"!", "n"}]}]}], "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"Function", "[", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"k", "||", "m", "||", 
+       RowBox[{"!", "n"}]}], ")"}], "&&", 
+     RowBox[{"(", 
+      RowBox[{"l", "||", "m", "||", 
+       RowBox[{"!", "n"}]}], ")"}], "&&", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"!", "k"}], "||", 
+       RowBox[{"!", "l"}], "||", 
+       RowBox[{"!", "m"}]}], ")"}], "&&", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"!", "k"}], "||", 
+       RowBox[{"!", "l"}], "||", 
+       RowBox[{"!", "m"}], "||", 
+       RowBox[{"!", "n"}]}], ")"}]}], "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "l", ",", "m", ",", "n"}], "}"}], ",", "\"\<POS\>\"", 
+   ",", "\"\<POS\>\""}], "]"}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.683226284158401*^9, 3.683226462303055*^9}, {
+   3.683226838652186*^9, 3.6832268708829203`*^9}, 3.6832274208607407`*^9, 
+   3.683228046561142*^9, {3.683229246174324*^9, 3.683229334712986*^9}, {
+   3.6832293770120363`*^9, 3.683229381025709*^9}, {3.6832300442107697`*^9, 
+   3.683230076514135*^9}, 3.683231042477425*^9, {3.6832310910207987`*^9, 
+   3.683231242040016*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Equal: \"\>", "\[InvisibleSpace]", "True"}],
+  SequenceForm["Equal: ", True],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.683231158678281*^9, {3.6832312358048353`*^9, 3.683231244118058*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TagBox[
+      TagBox[GridBox[{
+         {
+          TagBox["k",
+           HoldForm], 
+          TagBox["l",
+           HoldForm], 
+          TagBox["m",
+           HoldForm], 
+          TagBox["n",
+           HoldForm], 
+          TagBox[
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"m", "\[Xor]", 
+              RowBox[{"(", 
+               RowBox[{"k", "&&", "l"}], ")"}]}], ")"}], "||", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"!", "m"}], "&&", 
+              RowBox[{"!", "n"}]}], ")"}]}],
+           HoldForm], 
+          TagBox[
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"k", "||", "m", "||", 
+              RowBox[{"!", "n"}]}], ")"}], "&&", 
+            RowBox[{"(", 
+             RowBox[{"l", "||", "m", "||", 
+              RowBox[{"!", "n"}]}], ")"}], "&&", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"!", "k"}], "||", 
+              RowBox[{"!", "l"}], "||", 
+              RowBox[{"!", "m"}]}], ")"}], "&&", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"!", "k"}], "||", 
+              RowBox[{"!", "l"}], "||", 
+              RowBox[{"!", "m"}], "||", 
+              RowBox[{"!", "n"}]}], ")"}]}],
+           HoldForm]},
+         {"True", "True", "True", "True", "False", "False"},
+         {"True", "True", "True", "False", "False", "False"},
+         {"True", "True", "False", "True", "True", "True"},
+         {"True", "True", "False", "False", "True", "True"},
+         {"True", "False", "True", "True", "True", "True"},
+         {"True", "False", "True", "False", "True", "True"},
+         {"True", "False", "False", "True", "False", "False"},
+         {"True", "False", "False", "False", "True", "True"},
+         {"False", "True", "True", "True", "True", "True"},
+         {"False", "True", "True", "False", "True", "True"},
+         {"False", "True", "False", "True", "False", "False"},
+         {"False", "True", "False", "False", "True", "True"},
+         {"False", "False", "True", "True", "True", "True"},
+         {"False", "False", "True", "False", "True", "True"},
+         {"False", "False", "False", "True", "False", "False"},
+         {"False", "False", "False", "False", "True", "True"}
+        },
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxDividers->{
+         "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[2.0999999999999996`]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}}],
+       {None, OutputFormsDump`HeadedColumns}],
+      Function[BoxForm`e$, 
+       TableForm[
+       BoxForm`e$, 
+        TableHeadings -> {
+         None, {$CellContext`k, $CellContext`l, $CellContext`m, \
+$CellContext`n, 
+           Or[
+            Xor[$CellContext`m, 
+             And[$CellContext`k, $CellContext`l]], 
+            And[
+             Not[$CellContext`m], 
+             Not[$CellContext`n]]], 
+           And[
+            Or[$CellContext`k, $CellContext`m, 
+             Not[$CellContext`n]], 
+            Or[$CellContext`l, $CellContext`m, 
+             Not[$CellContext`n]], 
+            Or[
+             Not[$CellContext`k], 
+             Not[$CellContext`l], 
+             Not[$CellContext`m]], 
+            Or[
+             Not[$CellContext`k], 
+             Not[$CellContext`l], 
+             Not[$CellContext`m], 
+             Not[$CellContext`n]]]}}]]]},
+    {""}
+   },
+   DefaultBaseStyle->"Column",
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Column"]], "Print",
+ CellChangeTimes->{
+  3.683231158678281*^9, {3.6832312358048353`*^9, 3.683231244118973*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fn1: \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"!", "k"}], "||", 
+      RowBox[{"!", "l"}], "||", 
+      RowBox[{"!", "m"}]}], ")"}], "&&", 
+    RowBox[{"(", 
+     RowBox[{"k", "||", "m", "||", 
+      RowBox[{"!", "n"}]}], ")"}], "&&", 
+    RowBox[{"(", 
+     RowBox[{"l", "||", "m", "||", 
+      RowBox[{"!", "n"}]}], ")"}]}]}],
+  SequenceForm["Fn1: ", 
+   And[
+    Or[
+     Not[$CellContext`k], 
+     Not[$CellContext`l], 
+     Not[$CellContext`m]], 
+    Or[$CellContext`k, $CellContext`m, 
+     Not[$CellContext`n]], 
+    Or[$CellContext`l, $CellContext`m, 
+     Not[$CellContext`n]]]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.683231158678281*^9, {3.6832312358048353`*^9, 3.68323124411968*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fn2: \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"!", "k"}], "||", 
+      RowBox[{"!", "l"}], "||", 
+      RowBox[{"!", "m"}]}], ")"}], "&&", 
+    RowBox[{"(", 
+     RowBox[{"k", "||", "m", "||", 
+      RowBox[{"!", "n"}]}], ")"}], "&&", 
+    RowBox[{"(", 
+     RowBox[{"l", "||", "m", "||", 
+      RowBox[{"!", "n"}]}], ")"}]}]}],
+  SequenceForm["Fn2: ", 
+   And[
+    Or[
+     Not[$CellContext`k], 
+     Not[$CellContext`l], 
+     Not[$CellContext`m]], 
+    Or[$CellContext`k, $CellContext`m, 
+     Not[$CellContext`n]], 
+    Or[$CellContext`l, $CellContext`m, 
+     Not[$CellContext`n]]]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.683231158678281*^9, {3.6832312358048353`*^9, 3.6832312441200457`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{"Problem", " ", 
+   RowBox[{"3.26", ".", "a"}]}], "Subsection"]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.683227587302322*^9, 3.683227592499311*^9}, 
+   3.6832276581127577`*^9, 3.6832280465611067`*^9, {3.683229239242072*^9, 
+   3.6832292411967363`*^9}, {3.683231033453532*^9, 3.683231035469686*^9}, {
+   3.683930057230063*^9, 3.683930061965542*^9}}],
+
+Cell[BoxData[
+ RowBox[{"compTruth", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Function", "[", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"!", "a"}], "&&", 
+       RowBox[{"!", "c"}], "&&", 
+       RowBox[{"!", "d"}]}], ")"}], "||", 
+     RowBox[{"(", 
+      RowBox[{"a", "&&", 
+       RowBox[{"!", "c"}]}], ")"}], "||", 
+     RowBox[{"(", 
+      RowBox[{"b", "&&", "c", "&&", "d"}], ")"}], "||", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"!", "a"}], "&&", "c", "&&", 
+       RowBox[{"!", "d"}]}], ")"}], "||", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"!", "a"}], "&&", "b", "&&", "c"}], ")"}], "||", 
+     RowBox[{"(", 
+      RowBox[{"a", "&&", 
+       RowBox[{"!", "b"}], "&&", 
+       RowBox[{"!", "c"}]}], ")"}]}], "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"Function", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"!", "a"}], "&&", 
+      RowBox[{"!", "d"}]}], "||", 
+     RowBox[{"a", "&&", 
+      RowBox[{"!", "c"}]}], "||", 
+     RowBox[{"b", "&&", "c", "&&", "d"}]}], "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "b", ",", "c", ",", "d"}], "}"}], ",", "\"\<SOP\>\"", 
+   ",", "\"\<SOP\>\""}], "]"}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.683226284158401*^9, 3.683226462303055*^9}, {
+   3.683226838652186*^9, 3.6832268708829203`*^9}, 3.6832274208607407`*^9, 
+   3.683228046561142*^9, {3.683229246174324*^9, 3.683229334712986*^9}, {
+   3.6832293770120363`*^9, 3.683229381025709*^9}, {3.6832300442107697`*^9, 
+   3.683230076514135*^9}, 3.683231042477425*^9, {3.6832310910207987`*^9, 
+   3.683231242040016*^9}, {3.683930079539277*^9, 3.6839301785684357`*^9}, {
+   3.683930219153494*^9, 3.683930247295198*^9}, {3.683930753197942*^9, 
+   3.683930777605772*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Equal: \"\>", "\[InvisibleSpace]", "True"}],
+  SequenceForm["Equal: ", True],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.683930274837646*^9, 3.6839307787518806`*^9}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TagBox[
+      TagBox[GridBox[{
+         {
+          TagBox["a",
+           HoldForm], 
+          TagBox["b",
+           HoldForm], 
+          TagBox["c",
+           HoldForm], 
+          TagBox["d",
+           HoldForm], 
+          TagBox[
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"!", "a"}], "&&", 
+              RowBox[{"!", "c"}], "&&", 
+              RowBox[{"!", "d"}]}], ")"}], "||", 
+            RowBox[{"(", 
+             RowBox[{"a", "&&", 
+              RowBox[{"!", "c"}]}], ")"}], "||", 
+            RowBox[{"(", 
+             RowBox[{"b", "&&", "c", "&&", "d"}], ")"}], "||", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"!", "a"}], "&&", "c", "&&", 
+              RowBox[{"!", "d"}]}], ")"}], "||", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"!", "a"}], "&&", "b", "&&", "c"}], ")"}], "||", 
+            RowBox[{"(", 
+             RowBox[{"a", "&&", 
+              RowBox[{"!", "b"}], "&&", 
+              RowBox[{"!", "c"}]}], ")"}]}],
+           HoldForm], 
+          TagBox[
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"!", "a"}], "&&", 
+              RowBox[{"!", "d"}]}], ")"}], "||", 
+            RowBox[{"(", 
+             RowBox[{"a", "&&", 
+              RowBox[{"!", "c"}]}], ")"}], "||", 
+            RowBox[{"(", 
+             RowBox[{"b", "&&", "c", "&&", "d"}], ")"}]}],
+           HoldForm]},
+         {"True", "True", "True", "True", "True", "True"},
+         {"True", "True", "True", "False", "False", "False"},
+         {"True", "True", "False", "True", "True", "True"},
+         {"True", "True", "False", "False", "True", "True"},
+         {"True", "False", "True", "True", "False", "False"},
+         {"True", "False", "True", "False", "False", "False"},
+         {"True", "False", "False", "True", "True", "True"},
+         {"True", "False", "False", "False", "True", "True"},
+         {"False", "True", "True", "True", "True", "True"},
+         {"False", "True", "True", "False", "True", "True"},
+         {"False", "True", "False", "True", "False", "False"},
+         {"False", "True", "False", "False", "True", "True"},
+         {"False", "False", "True", "True", "False", "False"},
+         {"False", "False", "True", "False", "True", "True"},
+         {"False", "False", "False", "True", "False", "False"},
+         {"False", "False", "False", "False", "True", "True"}
+        },
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxDividers->{
+         "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[2.0999999999999996`]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}}],
+       {None, OutputFormsDump`HeadedColumns}],
+      Function[BoxForm`e$, 
+       TableForm[
+       BoxForm`e$, 
+        TableHeadings -> {
+         None, {$CellContext`a, $CellContext`b, $CellContext`c, \
+$CellContext`d, 
+           Or[
+            And[
+             Not[$CellContext`a], 
+             Not[$CellContext`c], 
+             Not[$CellContext`d]], 
+            And[$CellContext`a, 
+             Not[$CellContext`c]], 
+            And[$CellContext`b, $CellContext`c, $CellContext`d], 
+            And[
+             Not[$CellContext`a], $CellContext`c, 
+             Not[$CellContext`d]], 
+            And[
+             Not[$CellContext`a], $CellContext`b, $CellContext`c], 
+            And[$CellContext`a, 
+             Not[$CellContext`b], 
+             Not[$CellContext`c]]], 
+           Or[
+            And[
+             Not[$CellContext`a], 
+             Not[$CellContext`d]], 
+            And[$CellContext`a, 
+             Not[$CellContext`c]], 
+            And[$CellContext`b, $CellContext`c, $CellContext`d]]}}]]]},
+    {""}
+   },
+   DefaultBaseStyle->"Column",
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Column"]], "Print",
+ CellChangeTimes->{3.683930274837646*^9, 3.683930778752913*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fn1: \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"a", "&&", 
+      RowBox[{"!", "c"}]}], ")"}], "||", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"!", "a"}], "&&", 
+      RowBox[{"!", "d"}]}], ")"}], "||", 
+    RowBox[{"(", 
+     RowBox[{"b", "&&", "c", "&&", "d"}], ")"}]}]}],
+  SequenceForm["Fn1: ", 
+   Or[
+    And[$CellContext`a, 
+     Not[$CellContext`c]], 
+    And[
+     Not[$CellContext`a], 
+     Not[$CellContext`d]], 
+    And[$CellContext`b, $CellContext`c, $CellContext`d]]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.683930274837646*^9, 3.6839307787538633`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fn2: \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"a", "&&", 
+      RowBox[{"!", "c"}]}], ")"}], "||", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"!", "a"}], "&&", 
+      RowBox[{"!", "d"}]}], ")"}], "||", 
+    RowBox[{"(", 
+     RowBox[{"b", "&&", "c", "&&", "d"}], ")"}]}]}],
+  SequenceForm["Fn2: ", 
+   Or[
+    And[$CellContext`a, 
+     Not[$CellContext`c]], 
+    And[
+     Not[$CellContext`a], 
+     Not[$CellContext`d]], 
+    And[$CellContext`b, $CellContext`c, $CellContext`d]]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.683930274837646*^9, 3.683930778754303*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{"Problem", " ", 
+   RowBox[{"3.33", ".", "a"}]}], "Subsection"]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.683227587302322*^9, 3.683227592499311*^9}, 
+   3.6832276581127577`*^9, 3.6832280465611067`*^9, {3.683229239242072*^9, 
+   3.6832292411967363`*^9}, {3.683231033453532*^9, 3.683231035469686*^9}, {
+   3.683930057230063*^9, 3.683930061965542*^9}, {3.6841605594900703`*^9, 
+   3.684160560943475*^9}}],
+
+Cell[BoxData[
+ RowBox[{"compTruth", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Function", "[", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"a", "&&", "b", "&&", 
+       RowBox[{"!", "d"}], "&&", 
+       RowBox[{"!", "f"}]}], ")"}], "||", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"!", "b"}], "&&", "c", "&&", "e", "&&", "g", "&&", 
+       RowBox[{"!", "h"}]}], ")"}], "||", 
+     RowBox[{"(", 
+      RowBox[{"a", "&&", "b", "&&", 
+       RowBox[{"!", "d"}], "&&", "f"}], ")"}], "||", 
+     RowBox[{"(", 
+      RowBox[{"a", "&&", "c", "&&", 
+       RowBox[{"!", "d"}], "&&", "e"}], ")"}], "||", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"!", "b"}], "&&", "c", "&&", "e"}], ")"}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Function", "[", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"a", "&&", "b", "&&", 
+       RowBox[{"!", "d"}]}], ")"}], "||", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"!", "b"}], "&&", "c", "&&", "e"}], ")"}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+    "a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f", ",", "g", ",", 
+     "h"}], "}"}], ",", "\"\<SOP\>\"", ",", "\"\<POS\>\""}], "]"}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.683226284158401*^9, 3.683226462303055*^9}, {
+   3.683226838652186*^9, 3.6832268708829203`*^9}, 3.6832274208607407`*^9, 
+   3.683228046561142*^9, {3.683229246174324*^9, 3.683229334712986*^9}, {
+   3.6832293770120363`*^9, 3.683229381025709*^9}, {3.6832300442107697`*^9, 
+   3.683230076514135*^9}, 3.683231042477425*^9, {3.6832310910207987`*^9, 
+   3.683231242040016*^9}, {3.683930079539277*^9, 3.6839301785684357`*^9}, {
+   3.683930219153494*^9, 3.683930247295198*^9}, {3.683930753197942*^9, 
+   3.683930777605772*^9}, {3.684160569723178*^9, 3.684160672354827*^9}, {
+   3.684162257678364*^9, 3.684162331619617*^9}, {3.6841623767674627`*^9, 
+   3.684162429741705*^9}, {3.684162464750072*^9, 3.684162465889948*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Equal: \"\>", "\[InvisibleSpace]", "True"}],
+  SequenceForm["Equal: ", True],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.684160701520761*^9, 3.684162402874448*^9, {3.68416243644545*^9, 
+   3.684162466425832*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TagBox[
+      TagBox[GridBox[{
+         {
+          TagBox["a",
+           HoldForm], 
+          TagBox["b",
+           HoldForm], 
+          TagBox["c",
+           HoldForm], 
+          TagBox["d",
+           HoldForm], 
+          TagBox["e",
+           HoldForm], 
+          TagBox["f",
+           HoldForm], 
+          TagBox["g",
+           HoldForm], 
+          TagBox["h",
+           HoldForm], 
+          TagBox[
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"a", "&&", "b", "&&", 
+              RowBox[{"!", "d"}], "&&", 
+              RowBox[{"!", "f"}]}], ")"}], "||", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"!", "b"}], "&&", "c", "&&", "e", "&&", "g", "&&", 
+              RowBox[{"!", "h"}]}], ")"}], "||", 
+            RowBox[{"(", 
+             RowBox[{"a", "&&", "b", "&&", 
+              RowBox[{"!", "d"}], "&&", "f"}], ")"}], "||", 
+            RowBox[{"(", 
+             RowBox[{"a", "&&", "c", "&&", 
+              RowBox[{"!", "d"}], "&&", "e"}], ")"}], "||", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"!", "b"}], "&&", "c", "&&", "e"}], ")"}]}],
+           HoldForm], 
+          TagBox[
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"a", "&&", "b", "&&", 
+              RowBox[{"!", "d"}]}], ")"}], "||", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"!", "b"}], "&&", "c", "&&", "e"}], ")"}]}],
+           HoldForm]},
+         {"True", "True", "True", "True", "True", "True", "True", "True", 
+          "False", "False"},
+         {"True", "True", "True", "True", "True", "True", "True", "False", 
+          "False", "False"},
+         {"True", "True", "True", "True", "True", "True", "False", "True", 
+          "False", "False"},
+         {"True", "True", "True", "True", "True", "True", "False", "False", 
+          "False", "False"},
+         {"True", "True", "True", "True", "True", "False", "True", "True", 
+          "False", "False"},
+         {"True", "True", "True", "True", "True", "False", "True", "False", 
+          "False", "False"},
+         {"True", "True", "True", "True", "True", "False", "False", "True", 
+          "False", "False"},
+         {"True", "True", "True", "True", "True", "False", "False", "False", 
+          "False", "False"},
+         {"True", "True", "True", "True", "False", "True", "True", "True", 
+          "False", "False"},
+         {"True", "True", "True", "True", "False", "True", "True", "False", 
+          "False", "False"},
+         {"True", "True", "True", "True", "False", "True", "False", "True", 
+          "False", "False"},
+         {"True", "True", "True", "True", "False", "True", "False", "False", 
+          "False", "False"},
+         {"True", "True", "True", "True", "False", "False", "True", "True", 
+          "False", "False"},
+         {"True", "True", "True", "True", "False", "False", "True", "False", 
+          "False", "False"},
+         {"True", "True", "True", "True", "False", "False", "False", "True", 
+          "False", "False"},
+         {"True", "True", "True", "True", "False", "False", "False", "False", 
+          "False", "False"},
+         {"True", "True", "True", "False", "True", "True", "True", "True", 
+          "True", "True"},
+         {"True", "True", "True", "False", "True", "True", "True", "False", 
+          "True", "True"},
+         {"True", "True", "True", "False", "True", "True", "False", "True", 
+          "True", "True"},
+         {"True", "True", "True", "False", "True", "True", "False", "False", 
+          "True", "True"},
+         {"True", "True", "True", "False", "True", "False", "True", "True", 
+          "True", "True"},
+         {"True", "True", "True", "False", "True", "False", "True", "False", 
+          "True", "True"},
+         {"True", "True", "True", "False", "True", "False", "False", "True", 
+          "True", "True"},
+         {"True", "True", "True", "False", "True", "False", "False", "False", 
+          "True", "True"},
+         {"True", "True", "True", "False", "False", "True", "True", "True", 
+          "True", "True"},
+         {"True", "True", "True", "False", "False", "True", "True", "False", 
+          "True", "True"},
+         {"True", "True", "True", "False", "False", "True", "False", "True", 
+          "True", "True"},
+         {"True", "True", "True", "False", "False", "True", "False", "False", 
+          "True", "True"},
+         {"True", "True", "True", "False", "False", "False", "True", "True", 
+          "True", "True"},
+         {"True", "True", "True", "False", "False", "False", "True", "False", 
+          "True", "True"},
+         {"True", "True", "True", "False", "False", "False", "False", "True", 
+          "True", "True"},
+         {"True", "True", "True", "False", "False", "False", "False", "False",
+           "True", "True"},
+         {"True", "True", "False", "True", "True", "True", "True", "True", 
+          "False", "False"},
+         {"True", "True", "False", "True", "True", "True", "True", "False", 
+          "False", "False"},
+         {"True", "True", "False", "True", "True", "True", "False", "True", 
+          "False", "False"},
+         {"True", "True", "False", "True", "True", "True", "False", "False", 
+          "False", "False"},
+         {"True", "True", "False", "True", "True", "False", "True", "True", 
+          "False", "False"},
+         {"True", "True", "False", "True", "True", "False", "True", "False", 
+          "False", "False"},
+         {"True", "True", "False", "True", "True", "False", "False", "True", 
+          "False", "False"},
+         {"True", "True", "False", "True", "True", "False", "False", "False", 
+          "False", "False"},
+         {"True", "True", "False", "True", "False", "True", "True", "True", 
+          "False", "False"},
+         {"True", "True", "False", "True", "False", "True", "True", "False", 
+          "False", "False"},
+         {"True", "True", "False", "True", "False", "True", "False", "True", 
+          "False", "False"},
+         {"True", "True", "False", "True", "False", "True", "False", "False", 
+          "False", "False"},
+         {"True", "True", "False", "True", "False", "False", "True", "True", 
+          "False", "False"},
+         {"True", "True", "False", "True", "False", "False", "True", "False", 
+          "False", "False"},
+         {"True", "True", "False", "True", "False", "False", "False", "True", 
+          "False", "False"},
+         {"True", "True", "False", "True", "False", "False", "False", "False",
+           "False", "False"},
+         {"True", "True", "False", "False", "True", "True", "True", "True", 
+          "True", "True"},
+         {"True", "True", "False", "False", "True", "True", "True", "False", 
+          "True", "True"},
+         {"True", "True", "False", "False", "True", "True", "False", "True", 
+          "True", "True"},
+         {"True", "True", "False", "False", "True", "True", "False", "False", 
+          "True", "True"},
+         {"True", "True", "False", "False", "True", "False", "True", "True", 
+          "True", "True"},
+         {"True", "True", "False", "False", "True", "False", "True", "False", 
+          "True", "True"},
+         {"True", "True", "False", "False", "True", "False", "False", "True", 
+          "True", "True"},
+         {"True", "True", "False", "False", "True", "False", "False", "False",
+           "True", "True"},
+         {"True", "True", "False", "False", "False", "True", "True", "True", 
+          "True", "True"},
+         {"True", "True", "False", "False", "False", "True", "True", "False", 
+          "True", "True"},
+         {"True", "True", "False", "False", "False", "True", "False", "True", 
+          "True", "True"},
+         {"True", "True", "False", "False", "False", "True", "False", "False",
+           "True", "True"},
+         {"True", "True", "False", "False", "False", "False", "True", "True", 
+          "True", "True"},
+         {"True", "True", "False", "False", "False", "False", "True", "False",
+           "True", "True"},
+         {"True", "True", "False", "False", "False", "False", "False", "True",
+           "True", "True"},
+         {"True", "True", "False", "False", "False", "False", "False", 
+          "False", "True", "True"},
+         {"True", "False", "True", "True", "True", "True", "True", "True", 
+          "True", "True"},
+         {"True", "False", "True", "True", "True", "True", "True", "False", 
+          "True", "True"},
+         {"True", "False", "True", "True", "True", "True", "False", "True", 
+          "True", "True"},
+         {"True", "False", "True", "True", "True", "True", "False", "False", 
+          "True", "True"},
+         {"True", "False", "True", "True", "True", "False", "True", "True", 
+          "True", "True"},
+         {"True", "False", "True", "True", "True", "False", "True", "False", 
+          "True", "True"},
+         {"True", "False", "True", "True", "True", "False", "False", "True", 
+          "True", "True"},
+         {"True", "False", "True", "True", "True", "False", "False", "False", 
+          "True", "True"},
+         {"True", "False", "True", "True", "False", "True", "True", "True", 
+          "False", "False"},
+         {"True", "False", "True", "True", "False", "True", "True", "False", 
+          "False", "False"},
+         {"True", "False", "True", "True", "False", "True", "False", "True", 
+          "False", "False"},
+         {"True", "False", "True", "True", "False", "True", "False", "False", 
+          "False", "False"},
+         {"True", "False", "True", "True", "False", "False", "True", "True", 
+          "False", "False"},
+         {"True", "False", "True", "True", "False", "False", "True", "False", 
+          "False", "False"},
+         {"True", "False", "True", "True", "False", "False", "False", "True", 
+          "False", "False"},
+         {"True", "False", "True", "True", "False", "False", "False", "False",
+           "False", "False"},
+         {"True", "False", "True", "False", "True", "True", "True", "True", 
+          "True", "True"},
+         {"True", "False", "True", "False", "True", "True", "True", "False", 
+          "True", "True"},
+         {"True", "False", "True", "False", "True", "True", "False", "True", 
+          "True", "True"},
+         {"True", "False", "True", "False", "True", "True", "False", "False", 
+          "True", "True"},
+         {"True", "False", "True", "False", "True", "False", "True", "True", 
+          "True", "True"},
+         {"True", "False", "True", "False", "True", "False", "True", "False", 
+          "True", "True"},
+         {"True", "False", "True", "False", "True", "False", "False", "True", 
+          "True", "True"},
+         {"True", "False", "True", "False", "True", "False", "False", "False",
+           "True", "True"},
+         {"True", "False", "True", "False", "False", "True", "True", "True", 
+          "False", "False"},
+         {"True", "False", "True", "False", "False", "True", "True", "False", 
+          "False", "False"},
+         {"True", "False", "True", "False", "False", "True", "False", "True", 
+          "False", "False"},
+         {"True", "False", "True", "False", "False", "True", "False", "False",
+           "False", "False"},
+         {"True", "False", "True", "False", "False", "False", "True", "True", 
+          "False", "False"},
+         {"True", "False", "True", "False", "False", "False", "True", "False",
+           "False", "False"},
+         {"True", "False", "True", "False", "False", "False", "False", "True",
+           "False", "False"},
+         {"True", "False", "True", "False", "False", "False", "False", 
+          "False", "False", "False"},
+         {"True", "False", "False", "True", "True", "True", "True", "True", 
+          "False", "False"},
+         {"True", "False", "False", "True", "True", "True", "True", "False", 
+          "False", "False"},
+         {"True", "False", "False", "True", "True", "True", "False", "True", 
+          "False", "False"},
+         {"True", "False", "False", "True", "True", "True", "False", "False", 
+          "False", "False"},
+         {"True", "False", "False", "True", "True", "False", "True", "True", 
+          "False", "False"},
+         {"True", "False", "False", "True", "True", "False", "True", "False", 
+          "False", "False"},
+         {"True", "False", "False", "True", "True", "False", "False", "True", 
+          "False", "False"},
+         {"True", "False", "False", "True", "True", "False", "False", "False",
+           "False", "False"},
+         {"True", "False", "False", "True", "False", "True", "True", "True", 
+          "False", "False"},
+         {"True", "False", "False", "True", "False", "True", "True", "False", 
+          "False", "False"},
+         {"True", "False", "False", "True", "False", "True", "False", "True", 
+          "False", "False"},
+         {"True", "False", "False", "True", "False", "True", "False", "False",
+           "False", "False"},
+         {"True", "False", "False", "True", "False", "False", "True", "True", 
+          "False", "False"},
+         {"True", "False", "False", "True", "False", "False", "True", "False",
+           "False", "False"},
+         {"True", "False", "False", "True", "False", "False", "False", "True",
+           "False", "False"},
+         {"True", "False", "False", "True", "False", "False", "False", 
+          "False", "False", "False"},
+         {"True", "False", "False", "False", "True", "True", "True", "True", 
+          "False", "False"},
+         {"True", "False", "False", "False", "True", "True", "True", "False", 
+          "False", "False"},
+         {"True", "False", "False", "False", "True", "True", "False", "True", 
+          "False", "False"},
+         {"True", "False", "False", "False", "True", "True", "False", "False",
+           "False", "False"},
+         {"True", "False", "False", "False", "True", "False", "True", "True", 
+          "False", "False"},
+         {"True", "False", "False", "False", "True", "False", "True", "False",
+           "False", "False"},
+         {"True", "False", "False", "False", "True", "False", "False", "True",
+           "False", "False"},
+         {"True", "False", "False", "False", "True", "False", "False", 
+          "False", "False", "False"},
+         {"True", "False", "False", "False", "False", "True", "True", "True", 
+          "False", "False"},
+         {"True", "False", "False", "False", "False", "True", "True", "False",
+           "False", "False"},
+         {"True", "False", "False", "False", "False", "True", "False", "True",
+           "False", "False"},
+         {"True", "False", "False", "False", "False", "True", "False", 
+          "False", "False", "False"},
+         {"True", "False", "False", "False", "False", "False", "True", "True",
+           "False", "False"},
+         {"True", "False", "False", "False", "False", "False", "True", 
+          "False", "False", "False"},
+         {"True", "False", "False", "False", "False", "False", "False", 
+          "True", "False", "False"},
+         {"True", "False", "False", "False", "False", "False", "False", 
+          "False", "False", "False"},
+         {"False", "True", "True", "True", "True", "True", "True", "True", 
+          "False", "False"},
+         {"False", "True", "True", "True", "True", "True", "True", "False", 
+          "False", "False"},
+         {"False", "True", "True", "True", "True", "True", "False", "True", 
+          "False", "False"},
+         {"False", "True", "True", "True", "True", "True", "False", "False", 
+          "False", "False"},
+         {"False", "True", "True", "True", "True", "False", "True", "True", 
+          "False", "False"},
+         {"False", "True", "True", "True", "True", "False", "True", "False", 
+          "False", "False"},
+         {"False", "True", "True", "True", "True", "False", "False", "True", 
+          "False", "False"},
+         {"False", "True", "True", "True", "True", "False", "False", "False", 
+          "False", "False"},
+         {"False", "True", "True", "True", "False", "True", "True", "True", 
+          "False", "False"},
+         {"False", "True", "True", "True", "False", "True", "True", "False", 
+          "False", "False"},
+         {"False", "True", "True", "True", "False", "True", "False", "True", 
+          "False", "False"},
+         {"False", "True", "True", "True", "False", "True", "False", "False", 
+          "False", "False"},
+         {"False", "True", "True", "True", "False", "False", "True", "True", 
+          "False", "False"},
+         {"False", "True", "True", "True", "False", "False", "True", "False", 
+          "False", "False"},
+         {"False", "True", "True", "True", "False", "False", "False", "True", 
+          "False", "False"},
+         {"False", "True", "True", "True", "False", "False", "False", "False",
+           "False", "False"},
+         {"False", "True", "True", "False", "True", "True", "True", "True", 
+          "False", "False"},
+         {"False", "True", "True", "False", "True", "True", "True", "False", 
+          "False", "False"},
+         {"False", "True", "True", "False", "True", "True", "False", "True", 
+          "False", "False"},
+         {"False", "True", "True", "False", "True", "True", "False", "False", 
+          "False", "False"},
+         {"False", "True", "True", "False", "True", "False", "True", "True", 
+          "False", "False"},
+         {"False", "True", "True", "False", "True", "False", "True", "False", 
+          "False", "False"},
+         {"False", "True", "True", "False", "True", "False", "False", "True", 
+          "False", "False"},
+         {"False", "True", "True", "False", "True", "False", "False", "False",
+           "False", "False"},
+         {"False", "True", "True", "False", "False", "True", "True", "True", 
+          "False", "False"},
+         {"False", "True", "True", "False", "False", "True", "True", "False", 
+          "False", "False"},
+         {"False", "True", "True", "False", "False", "True", "False", "True", 
+          "False", "False"},
+         {"False", "True", "True", "False", "False", "True", "False", "False",
+           "False", "False"},
+         {"False", "True", "True", "False", "False", "False", "True", "True", 
+          "False", "False"},
+         {"False", "True", "True", "False", "False", "False", "True", "False",
+           "False", "False"},
+         {"False", "True", "True", "False", "False", "False", "False", "True",
+           "False", "False"},
+         {"False", "True", "True", "False", "False", "False", "False", 
+          "False", "False", "False"},
+         {"False", "True", "False", "True", "True", "True", "True", "True", 
+          "False", "False"},
+         {"False", "True", "False", "True", "True", "True", "True", "False", 
+          "False", "False"},
+         {"False", "True", "False", "True", "True", "True", "False", "True", 
+          "False", "False"},
+         {"False", "True", "False", "True", "True", "True", "False", "False", 
+          "False", "False"},
+         {"False", "True", "False", "True", "True", "False", "True", "True", 
+          "False", "False"},
+         {"False", "True", "False", "True", "True", "False", "True", "False", 
+          "False", "False"},
+         {"False", "True", "False", "True", "True", "False", "False", "True", 
+          "False", "False"},
+         {"False", "True", "False", "True", "True", "False", "False", "False",
+           "False", "False"},
+         {"False", "True", "False", "True", "False", "True", "True", "True", 
+          "False", "False"},
+         {"False", "True", "False", "True", "False", "True", "True", "False", 
+          "False", "False"},
+         {"False", "True", "False", "True", "False", "True", "False", "True", 
+          "False", "False"},
+         {"False", "True", "False", "True", "False", "True", "False", "False",
+           "False", "False"},
+         {"False", "True", "False", "True", "False", "False", "True", "True", 
+          "False", "False"},
+         {"False", "True", "False", "True", "False", "False", "True", "False",
+           "False", "False"},
+         {"False", "True", "False", "True", "False", "False", "False", "True",
+           "False", "False"},
+         {"False", "True", "False", "True", "False", "False", "False", 
+          "False", "False", "False"},
+         {"False", "True", "False", "False", "True", "True", "True", "True", 
+          "False", "False"},
+         {"False", "True", "False", "False", "True", "True", "True", "False", 
+          "False", "False"},
+         {"False", "True", "False", "False", "True", "True", "False", "True", 
+          "False", "False"},
+         {"False", "True", "False", "False", "True", "True", "False", "False",
+           "False", "False"},
+         {"False", "True", "False", "False", "True", "False", "True", "True", 
+          "False", "False"},
+         {"False", "True", "False", "False", "True", "False", "True", "False",
+           "False", "False"},
+         {"False", "True", "False", "False", "True", "False", "False", "True",
+           "False", "False"},
+         {"False", "True", "False", "False", "True", "False", "False", 
+          "False", "False", "False"},
+         {"False", "True", "False", "False", "False", "True", "True", "True", 
+          "False", "False"},
+         {"False", "True", "False", "False", "False", "True", "True", "False",
+           "False", "False"},
+         {"False", "True", "False", "False", "False", "True", "False", "True",
+           "False", "False"},
+         {"False", "True", "False", "False", "False", "True", "False", 
+          "False", "False", "False"},
+         {"False", "True", "False", "False", "False", "False", "True", "True",
+           "False", "False"},
+         {"False", "True", "False", "False", "False", "False", "True", 
+          "False", "False", "False"},
+         {"False", "True", "False", "False", "False", "False", "False", 
+          "True", "False", "False"},
+         {"False", "True", "False", "False", "False", "False", "False", 
+          "False", "False", "False"},
+         {"False", "False", "True", "True", "True", "True", "True", "True", 
+          "True", "True"},
+         {"False", "False", "True", "True", "True", "True", "True", "False", 
+          "True", "True"},
+         {"False", "False", "True", "True", "True", "True", "False", "True", 
+          "True", "True"},
+         {"False", "False", "True", "True", "True", "True", "False", "False", 
+          "True", "True"},
+         {"False", "False", "True", "True", "True", "False", "True", "True", 
+          "True", "True"},
+         {"False", "False", "True", "True", "True", "False", "True", "False", 
+          "True", "True"},
+         {"False", "False", "True", "True", "True", "False", "False", "True", 
+          "True", "True"},
+         {"False", "False", "True", "True", "True", "False", "False", "False",
+           "True", "True"},
+         {"False", "False", "True", "True", "False", "True", "True", "True", 
+          "False", "False"},
+         {"False", "False", "True", "True", "False", "True", "True", "False", 
+          "False", "False"},
+         {"False", "False", "True", "True", "False", "True", "False", "True", 
+          "False", "False"},
+         {"False", "False", "True", "True", "False", "True", "False", "False",
+           "False", "False"},
+         {"False", "False", "True", "True", "False", "False", "True", "True", 
+          "False", "False"},
+         {"False", "False", "True", "True", "False", "False", "True", "False",
+           "False", "False"},
+         {"False", "False", "True", "True", "False", "False", "False", "True",
+           "False", "False"},
+         {"False", "False", "True", "True", "False", "False", "False", 
+          "False", "False", "False"},
+         {"False", "False", "True", "False", "True", "True", "True", "True", 
+          "True", "True"},
+         {"False", "False", "True", "False", "True", "True", "True", "False", 
+          "True", "True"},
+         {"False", "False", "True", "False", "True", "True", "False", "True", 
+          "True", "True"},
+         {"False", "False", "True", "False", "True", "True", "False", "False",
+           "True", "True"},
+         {"False", "False", "True", "False", "True", "False", "True", "True", 
+          "True", "True"},
+         {"False", "False", "True", "False", "True", "False", "True", "False",
+           "True", "True"},
+         {"False", "False", "True", "False", "True", "False", "False", "True",
+           "True", "True"},
+         {"False", "False", "True", "False", "True", "False", "False", 
+          "False", "True", "True"},
+         {"False", "False", "True", "False", "False", "True", "True", "True", 
+          "False", "False"},
+         {"False", "False", "True", "False", "False", "True", "True", "False",
+           "False", "False"},
+         {"False", "False", "True", "False", "False", "True", "False", "True",
+           "False", "False"},
+         {"False", "False", "True", "False", "False", "True", "False", 
+          "False", "False", "False"},
+         {"False", "False", "True", "False", "False", "False", "True", "True",
+           "False", "False"},
+         {"False", "False", "True", "False", "False", "False", "True", 
+          "False", "False", "False"},
+         {"False", "False", "True", "False", "False", "False", "False", 
+          "True", "False", "False"},
+         {"False", "False", "True", "False", "False", "False", "False", 
+          "False", "False", "False"},
+         {"False", "False", "False", "True", "True", "True", "True", "True", 
+          "False", "False"},
+         {"False", "False", "False", "True", "True", "True", "True", "False", 
+          "False", "False"},
+         {"False", "False", "False", "True", "True", "True", "False", "True", 
+          "False", "False"},
+         {"False", "False", "False", "True", "True", "True", "False", "False",
+           "False", "False"},
+         {"False", "False", "False", "True", "True", "False", "True", "True", 
+          "False", "False"},
+         {"False", "False", "False", "True", "True", "False", "True", "False",
+           "False", "False"},
+         {"False", "False", "False", "True", "True", "False", "False", "True",
+           "False", "False"},
+         {"False", "False", "False", "True", "True", "False", "False", 
+          "False", "False", "False"},
+         {"False", "False", "False", "True", "False", "True", "True", "True", 
+          "False", "False"},
+         {"False", "False", "False", "True", "False", "True", "True", "False",
+           "False", "False"},
+         {"False", "False", "False", "True", "False", "True", "False", "True",
+           "False", "False"},
+         {"False", "False", "False", "True", "False", "True", "False", 
+          "False", "False", "False"},
+         {"False", "False", "False", "True", "False", "False", "True", "True",
+           "False", "False"},
+         {"False", "False", "False", "True", "False", "False", "True", 
+          "False", "False", "False"},
+         {"False", "False", "False", "True", "False", "False", "False", 
+          "True", "False", "False"},
+         {"False", "False", "False", "True", "False", "False", "False", 
+          "False", "False", "False"},
+         {"False", "False", "False", "False", "True", "True", "True", "True", 
+          "False", "False"},
+         {"False", "False", "False", "False", "True", "True", "True", "False",
+           "False", "False"},
+         {"False", "False", "False", "False", "True", "True", "False", "True",
+           "False", "False"},
+         {"False", "False", "False", "False", "True", "True", "False", 
+          "False", "False", "False"},
+         {"False", "False", "False", "False", "True", "False", "True", "True",
+           "False", "False"},
+         {"False", "False", "False", "False", "True", "False", "True", 
+          "False", "False", "False"},
+         {"False", "False", "False", "False", "True", "False", "False", 
+          "True", "False", "False"},
+         {"False", "False", "False", "False", "True", "False", "False", 
+          "False", "False", "False"},
+         {"False", "False", "False", "False", "False", "True", "True", "True",
+           "False", "False"},
+         {"False", "False", "False", "False", "False", "True", "True", 
+          "False", "False", "False"},
+         {"False", "False", "False", "False", "False", "True", "False", 
+          "True", "False", "False"},
+         {"False", "False", "False", "False", "False", "True", "False", 
+          "False", "False", "False"},
+         {"False", "False", "False", "False", "False", "False", "True", 
+          "True", "False", "False"},
+         {"False", "False", "False", "False", "False", "False", "True", 
+          "False", "False", "False"},
+         {"False", "False", "False", "False", "False", "False", "False", 
+          "True", "False", "False"},
+         {"False", "False", "False", "False", "False", "False", "False", 
+          "False", "False", "False"}
+        },
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxDividers->{
+         "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[2.0999999999999996`]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}}],
+       {None, OutputFormsDump`HeadedColumns}],
+      Function[BoxForm`e$, 
+       TableForm[
+       BoxForm`e$, 
+        TableHeadings -> {
+         None, {$CellContext`a, $CellContext`b, $CellContext`c, \
+$CellContext`d, $CellContext`e, $CellContext`f, $CellContext`g, \
+$CellContext`h, 
+           Or[
+            And[$CellContext`a, $CellContext`b, 
+             Not[$CellContext`d], 
+             Not[$CellContext`f]], 
+            And[
+             
+             Not[$CellContext`b], $CellContext`c, $CellContext`e, \
+$CellContext`g, 
+             Not[$CellContext`h]], 
+            And[$CellContext`a, $CellContext`b, 
+             Not[$CellContext`d], $CellContext`f], 
+            And[$CellContext`a, $CellContext`c, 
+             Not[$CellContext`d], $CellContext`e], 
+            And[
+             Not[$CellContext`b], $CellContext`c, $CellContext`e]], 
+           Or[
+            And[$CellContext`a, $CellContext`b, 
+             Not[$CellContext`d]], 
+            And[
+             Not[$CellContext`b], $CellContext`c, $CellContext`e]]}}]]]},
+    {""}
+   },
+   DefaultBaseStyle->"Column",
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Column"]], "Print",
+ CellChangeTimes->{
+  3.684160701520761*^9, 3.684162402874448*^9, {3.68416243644545*^9, 
+   3.6841624664431868`*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fn1: \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"a", "&&", "b", "&&", 
+      RowBox[{"!", "d"}]}], ")"}], "||", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"!", "b"}], "&&", "c", "&&", "e"}], ")"}]}]}],
+  SequenceForm["Fn1: ", 
+   Or[
+    And[$CellContext`a, $CellContext`b, 
+     Not[$CellContext`d]], 
+    And[
+     Not[$CellContext`b], $CellContext`c, $CellContext`e]]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.684160701520761*^9, 3.684162402874448*^9, 
+  3.68416243644545*^9, 3.6841624664473457`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fn2: \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"a", "||", 
+      RowBox[{"!", "b"}]}], ")"}], "&&", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"!", "b"}], "||", 
+      RowBox[{"!", "d"}]}], ")"}], "&&", 
+    RowBox[{"(", 
+     RowBox[{"b", "||", "c"}], ")"}], "&&", 
+    RowBox[{"(", 
+     RowBox[{"b", "||", "e"}], ")"}]}]}],
+  SequenceForm["Fn2: ", 
+   And[
+    Or[$CellContext`a, 
+     Not[$CellContext`b]], 
+    Or[
+     Not[$CellContext`b], 
+     Not[$CellContext`d]], 
+    Or[$CellContext`b, $CellContext`c], 
+    Or[$CellContext`b, $CellContext`e]]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.684160701520761*^9, 3.684162402874448*^9, 
+  3.68416243644545*^9, 3.684162466447727*^9}]
+}, Open  ]]
+},
+WindowSize->{1983, 1128},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{Automatic, Automatic},
+PrintingOptions->{"PaperOrientation"->"Portrait",
+"PaperSize"->{Automatic, Automatic},
+"PostScriptOutputFile"->""},
+FrontEndVersion->"10.4 for Linux x86 (64-bit) (April 11, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 167, 3, 49, "Input"],
+Cell[570, 18, 2969, 72, 319, "Input"],
+Cell[3542, 92, 118, 2, 32, "Input"],
+Cell[3663, 96, 44, 1, 1, "PageBreak",
+ PageBreakBelow->True],
+Cell[3710, 99, 226, 5, 39, "Input"],
+Cell[CellGroupData[{
+Cell[3961, 108, 1409, 34, 121, "Input"],
+Cell[CellGroupData[{
+Cell[5395, 146, 222, 5, 23, "Print"],
+Cell[5620, 153, 4892, 107, 551, "Print"],
+Cell[10515, 262, 302, 7, 23, "Print"],
+Cell[10820, 271, 304, 7, 23, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[11151, 282, 120, 2, 32, "Input"],
+Cell[11274, 286, 44, 1, 1, "PageBreak",
+ PageBreakBelow->True],
+Cell[11321, 289, 203, 5, 39, "Input"],
+Cell[CellGroupData[{
+Cell[11549, 298, 1358, 37, 99, "Input"],
+Cell[CellGroupData[{
+Cell[12932, 339, 299, 7, 23, "Print"],
+Cell[13234, 348, 4398, 116, 295, "Print"],
+Cell[17635, 466, 1019, 33, 23, "Print"],
+Cell[18657, 501, 1022, 33, 23, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19728, 540, 334, 7, 39, "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[20065, 549, 1460, 39, 99, "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21562, 593, 299, 7, 23, "Print"],
+Cell[21864, 602, 4320, 114, 295, "Print"],
+Cell[26187, 718, 1022, 33, 23, "Print"],
+Cell[27212, 753, 936, 31, 23, "Print"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28185, 789, 362, 6, 39, "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[28550, 797, 1506, 39, 99, "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30093, 841, 249, 6, 23, "Print"],
+Cell[30345, 849, 4094, 110, 295, "Print"],
+Cell[34442, 961, 805, 27, 23, "Print"],
+Cell[35250, 990, 808, 27, 23, "Print"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[36095, 1022, 430, 8, 39, "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[36528, 1032, 1795, 45, 99, "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38360, 1082, 222, 5, 23, "Print"],
+Cell[38585, 1089, 4422, 117, 295, "Print"],
+Cell[43010, 1208, 661, 22, 23, "Print"],
+Cell[43674, 1232, 659, 22, 23, "Print"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[44370, 1259, 482, 9, 39, "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[44855, 1270, 1995, 46, 132, "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[46887, 1321, 272, 7, 23, "Print"],
+Cell[47162, 1330, 31027, 614, 4135, "Print"],
+Cell[78192, 1946, 596, 18, 23, "Print"],
+Cell[78791, 1966, 780, 26, 23, "Print"]
+}, Open  ]]
+}
+]
+*)
+

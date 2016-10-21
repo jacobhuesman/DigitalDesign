@@ -1,0 +1,141 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[      4644,        140]
+NotebookOptionsPosition[      4140,        116]
+NotebookOutlinePosition[      4478,        131]
+CellTagsIndexPosition[      4435,        128]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.683221715865116*^9, 3.683221717951847*^9}, {
+   3.683221792037698*^9, 3.683221841833391*^9}, 3.683222115504093*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"compTruth", "[", 
+   RowBox[{"f1_Function", ",", "f2_Function", ",", "list_"}], "]"}], ":=", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"Clear", "[", 
+     RowBox[{"x", ",", "y"}], "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Column", "[", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"TableForm", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"BooleanTable", "[", 
+          RowBox[{
+           RowBox[{"Append", "[", 
+            RowBox[{
+             RowBox[{"Append", "[", 
+              RowBox[{"list", ",", 
+               RowBox[{"f1", "[", "list", "]"}]}], "]"}], ",", 
+             RowBox[{"f2", "[", "list", "]"}]}], "]"}], ",", "list"}], "]"}], 
+         ",", "\[IndentingNewLine]", 
+         RowBox[{"TableHeadings", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"None", ",", 
+            RowBox[{"Append", "[", 
+             RowBox[{
+              RowBox[{"Append", "[", 
+               RowBox[{"list", ",", 
+                RowBox[{"f1", "[", "list", "]"}]}], "]"}], ",", 
+              RowBox[{"f2", "[", "list", "]"}]}], "]"}]}], "}"}]}]}], "]"}], 
+       ","}], "\[IndentingNewLine]", "}"}], "]"}]}], 
+   ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"compTruth", "[", 
+  RowBox[{
+   RowBox[{"Function", "[", 
+    RowBox[{"r", "||", "j"}], "]"}], ",", 
+   RowBox[{"Function", "[", 
+    RowBox[{"r", "&&", "j"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", "j"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.683223167322124*^9, 3.6832231982868233`*^9}, {
+  3.68322323508016*^9, 3.6832232458705177`*^9}, {3.683223303904249*^9, 
+  3.683223409815507*^9}, {3.683223449900221*^9, 3.683223752606889*^9}, {
+  3.683223901685779*^9, 3.683223948802471*^9}, {3.683223995995449*^9, 
+  3.68322411052617*^9}, {3.683224147367502*^9, 3.683224166838505*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TagBox[
+      TagBox[GridBox[{
+         {
+          TagBox["r",
+           HoldForm], 
+          TagBox["j",
+           HoldForm], 
+          TagBox[
+           RowBox[{"r", "||", "j"}],
+           HoldForm], 
+          TagBox[
+           RowBox[{"r", "&&", "j"}],
+           HoldForm]},
+         {"True", "True", "True", "True"},
+         {"True", "False", "True", "False"},
+         {"False", "True", "True", "False"},
+         {"False", "False", "False", "False"}
+        },
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxDividers->{
+         "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[2.0999999999999996`]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}}],
+       {None, OutputFormsDump`HeadedColumns}],
+      Function[BoxForm`e$, 
+       TableForm[
+       BoxForm`e$, TableHeadings -> {None, {$CellContext`r, $CellContext`j, 
+           Or[$CellContext`r, $CellContext`j], 
+           And[$CellContext`r, $CellContext`j]}}]]]},
+    {""}
+   },
+   DefaultBaseStyle->"Column",
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Column"]], "Output",
+ CellChangeTimes->{{3.6832240714338512`*^9, 3.683224110996695*^9}}]
+}, Open  ]]
+},
+WindowSize->{992, 1100},
+WindowMargins->{{-10, Automatic}, {Automatic, -10}},
+FrontEndVersion->"10.4 for Linux x86 (64-bit) (April 11, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 164, 2, 32, "Input"],
+Cell[CellGroupData[{
+Cell[589, 19, 1858, 45, 165, "Input"],
+Cell[2450, 66, 1674, 47, 117, "Output"]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,0 +1,949 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.4' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     34641,        939]
+NotebookOptionsPosition[     33324,        890]
+NotebookOutlinePosition[     33662,        905]
+CellTagsIndexPosition[     33619,        902]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"BooleanTable", "[", 
+   RowBox[{
+    RowBox[{"k", "&&", "m", "&&", "n"}], ",", 
+    RowBox[{"{", "k", "}"}], ",", 
+    RowBox[{"{", "m", "}"}], ",", 
+    RowBox[{"{", "n", "}"}]}], "]"}], "//", "TableForm"}]], "Input",
+ CellChangeTimes->{{3.683220277742391*^9, 3.683220282395131*^9}, {
+  3.68322031407376*^9, 3.683220341797922*^9}, {3.683220423462884*^9, 
+  3.6832204592553062`*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TagBox[GridBox[{
+        {"True"},
+        {"False"}
+       },
+       GridBoxAlignment->{
+        "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}},
+          "RowsIndexed" -> {}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.5599999999999999]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+         "Rows" -> {{
+            Offset[0.2]}}, "RowsIndexed" -> {}}],
+      Column], 
+     TagBox[GridBox[{
+        {"False"},
+        {"False"}
+       },
+       GridBoxAlignment->{
+        "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}},
+          "RowsIndexed" -> {}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.5599999999999999]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+         "Rows" -> {{
+            Offset[0.2]}}, "RowsIndexed" -> {}}],
+      Column]},
+    {
+     TagBox[GridBox[{
+        {"False"},
+        {"False"}
+       },
+       GridBoxAlignment->{
+        "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}},
+          "RowsIndexed" -> {}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.5599999999999999]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+         "Rows" -> {{
+            Offset[0.2]}}, "RowsIndexed" -> {}}],
+      Column], 
+     TagBox[GridBox[{
+        {"False"},
+        {"False"}
+       },
+       GridBoxAlignment->{
+        "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}},
+          "RowsIndexed" -> {}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.5599999999999999]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+         "Rows" -> {{
+            Offset[0.2]}}, "RowsIndexed" -> {}}],
+      Column]}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.683220450186626*^9, 3.683220460210988*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"boolorig", "[", "f_Function", "]"}], ":=", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"Clear", "[", 
+     RowBox[{"x", ",", "y"}], "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Column", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"TableForm", "[", 
+        RowBox[{
+         RowBox[{"BooleanTable", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"x", ",", "y", ",", 
+             RowBox[{"f", "[", 
+              RowBox[{"x", ",", "y"}], "]"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"x", ",", "y"}], "}"}]}], "]"}], ",", 
+         RowBox[{"TableHeadings", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"None", ",", 
+            RowBox[{"{", 
+             RowBox[{"x", ",", "y", ",", 
+              RowBox[{"f", "[", 
+               RowBox[{"x", ",", "y"}], "]"}]}], "}"}]}], "}"}]}]}], "]"}], 
+       ",", 
+       RowBox[{"BooleanConvert", "[", 
+        RowBox[{
+         RowBox[{"f", "[", 
+          RowBox[{"x", ",", "y"}], "]"}], ",", "NOR"}], "]"}], ",", 
+       RowBox[{"BooleanMinimize", "[", 
+        RowBox[{"f", "[", 
+         RowBox[{"x", ",", "y"}], "]"}], "]"}]}], "}"}], "]"}]}], 
+   ")"}]}]], "Input",
+ CellChangeTimes->{{3.68322056589747*^9, 3.6832205659016037`*^9}, {
+  3.6832211419915257`*^9, 3.683221143435812*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"boolorig", "[", 
+  RowBox[{"Function", "[", 
+   RowBox[{"x", "!"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.683221145583112*^9, 3.683221185424514*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TagBox[
+      TagBox[GridBox[{
+         {
+          TagBox["x",
+           HoldForm], 
+          TagBox["y",
+           HoldForm], 
+          TagBox[
+           RowBox[{"x", "!"}],
+           HoldForm]},
+         {"True", "True", 
+          RowBox[{"True", "!"}]},
+         {"True", "False", 
+          RowBox[{"True", "!"}]},
+         {"False", "True", 
+          RowBox[{"False", "!"}]},
+         {"False", "False", 
+          RowBox[{"False", "!"}]}
+        },
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxDividers->{
+         "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[2.0999999999999996`]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}}],
+       {None, OutputFormsDump`HeadedColumns}],
+      Function[BoxForm`e$, 
+       TableForm[
+       BoxForm`e$, TableHeadings -> {None, {$CellContext`x, $CellContext`y, 
+           Factorial[$CellContext`x]}}]]]},
+    {
+     RowBox[{"x", "!"}]},
+    {
+     RowBox[{"x", "!"}]}
+   },
+   DefaultBaseStyle->"Column",
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Column"]], "Output",
+ CellChangeTimes->{{3.683221158321513*^9, 3.683221185821102*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"boolStuff", "[", 
+  RowBox[{"Function", "[", 
+   RowBox[{"X", "&&", "Y"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.683220569450356*^9, 3.683220587117778*^9}, {
+  3.683220638895329*^9, 3.6832207183903103`*^9}, {3.683220759306287*^9, 
+  3.6832207885358667`*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TagBox[
+      TagBox[GridBox[{
+         {
+          TagBox["x",
+           HoldForm], 
+          TagBox["y",
+           HoldForm], 
+          TagBox[
+           RowBox[{"X", "&&", "Y"}],
+           HoldForm]},
+         {"True", "True", 
+          RowBox[{"X", "&&", "Y"}]},
+         {"True", "False", 
+          RowBox[{"X", "&&", "Y"}]},
+         {"False", "True", 
+          RowBox[{"X", "&&", "Y"}]},
+         {"False", "False", 
+          RowBox[{"X", "&&", "Y"}]}
+        },
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxDividers->{
+         "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[2.0999999999999996`]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}}],
+       {None, OutputFormsDump`HeadedColumns}],
+      Function[BoxForm`e$, 
+       TableForm[
+       BoxForm`e$, TableHeadings -> {None, {$CellContext`x, $CellContext`y, 
+           And[$CellContext`X, $CellContext`Y]}}]]]},
+    {
+     RowBox[{
+      RowBox[{"!", "X"}], "\[Nor]", 
+      RowBox[{"!", "Y"}]}]},
+    {
+     RowBox[{"X", "&&", "Y"}]}
+   },
+   DefaultBaseStyle->"Column",
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Column"]], "Output",
+ CellChangeTimes->{{3.683220696051671*^9, 3.683220718950363*^9}, {
+  3.683220763552431*^9, 3.6832207890655603`*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"boolStuff", "[", "f_Function", "]"}], ":=", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"Clear", "[", 
+     RowBox[{"k", ",", "l", ",", "m", ",", "n", ",", "r"}], "]"}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Column", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"TableForm", "[", 
+        RowBox[{
+         RowBox[{"BooleanTable", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"k", ",", "l", ",", "m", ",", "n", ",", "r", ",", 
+             RowBox[{"f", "[", 
+              RowBox[{"k", ",", "l", ",", "m", ",", "n", ",", "r"}], "]"}]}], 
+            "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"k", ",", "l", ",", "m", ",", "n", ",", "r"}], "}"}]}], 
+          "]"}], ",", 
+         RowBox[{"TableHeadings", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"None", ",", 
+            RowBox[{"{", 
+             RowBox[{"k", ",", "l", ",", "m", ",", "n", ",", "r", ",", 
+              RowBox[{"f", "[", 
+               RowBox[{"k", ",", "l", ",", "m", ",", "n", ",", "r"}], "]"}]}],
+              "}"}]}], "}"}]}]}], "]"}], ",", 
+       RowBox[{"BooleanMinimize", "[", 
+        RowBox[{"f", "[", 
+         RowBox[{"k", ",", "l", ",", "m", ",", "n", ",", "r"}], "]"}], 
+        "]"}]}], "}"}], "]"}]}], ")"}]}]], "Input",
+ CellChangeTimes->{{3.683220807267839*^9, 3.683220896059725*^9}, {
+  3.6832210697833357`*^9, 3.683221097251986*^9}, {3.683221254226293*^9, 
+  3.683221254580584*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"boolStuff", "[", 
+  RowBox[{"Function", "[", 
+   RowBox[{"k", "&&", "m", "&&", "n"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.683220899486046*^9, 3.6832209225095673`*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TagBox[
+      TagBox[GridBox[{
+         {
+          TagBox["k",
+           HoldForm], 
+          TagBox["l",
+           HoldForm], 
+          TagBox["m",
+           HoldForm], 
+          TagBox["n",
+           HoldForm], 
+          TagBox["r",
+           HoldForm], 
+          TagBox[
+           RowBox[{"k", "&&", "m", "&&", "n"}],
+           HoldForm]},
+         {"True", "True", "True", "True", "True", "True"},
+         {"True", "True", "True", "True", "False", "True"},
+         {"True", "True", "True", "False", "True", "False"},
+         {"True", "True", "True", "False", "False", "False"},
+         {"True", "True", "False", "True", "True", "False"},
+         {"True", "True", "False", "True", "False", "False"},
+         {"True", "True", "False", "False", "True", "False"},
+         {"True", "True", "False", "False", "False", "False"},
+         {"True", "False", "True", "True", "True", "True"},
+         {"True", "False", "True", "True", "False", "True"},
+         {"True", "False", "True", "False", "True", "False"},
+         {"True", "False", "True", "False", "False", "False"},
+         {"True", "False", "False", "True", "True", "False"},
+         {"True", "False", "False", "True", "False", "False"},
+         {"True", "False", "False", "False", "True", "False"},
+         {"True", "False", "False", "False", "False", "False"},
+         {"False", "True", "True", "True", "True", "False"},
+         {"False", "True", "True", "True", "False", "False"},
+         {"False", "True", "True", "False", "True", "False"},
+         {"False", "True", "True", "False", "False", "False"},
+         {"False", "True", "False", "True", "True", "False"},
+         {"False", "True", "False", "True", "False", "False"},
+         {"False", "True", "False", "False", "True", "False"},
+         {"False", "True", "False", "False", "False", "False"},
+         {"False", "False", "True", "True", "True", "False"},
+         {"False", "False", "True", "True", "False", "False"},
+         {"False", "False", "True", "False", "True", "False"},
+         {"False", "False", "True", "False", "False", "False"},
+         {"False", "False", "False", "True", "True", "False"},
+         {"False", "False", "False", "True", "False", "False"},
+         {"False", "False", "False", "False", "True", "False"},
+         {"False", "False", "False", "False", "False", "False"}
+        },
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxDividers->{
+         "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[2.0999999999999996`]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}}],
+       {None, OutputFormsDump`HeadedColumns}],
+      Function[BoxForm`e$, 
+       TableForm[
+       BoxForm`e$, 
+        TableHeadings -> {
+         None, {$CellContext`k, $CellContext`l, $CellContext`m, \
+$CellContext`n, $CellContext`r, 
+           And[$CellContext`k, $CellContext`m, $CellContext`n]}}]]]},
+    {
+     RowBox[{"k", "&&", "m", "&&", "n"}]}
+   },
+   DefaultBaseStyle->"Column",
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Column"]], "Output",
+ CellChangeTimes->{3.683220923010557*^9, 3.68322110171567*^9, 
+  3.6832212579070177`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"boolStuff", "[", 
+  RowBox[{"Function", "[", 
+   RowBox[{
+    RowBox[{"!", "k"}], "||", "l", "||", 
+    RowBox[{"!", "m"}], "||", 
+    RowBox[{"n", "&&", 
+     RowBox[{"!", "k"}]}], "||", 
+    RowBox[{"!", "m"}], "||", "n", "||", 
+    RowBox[{"r", "&&", 
+     RowBox[{"!", "k"}]}], "||", 
+    RowBox[{"!", "m"}], "||", "n", "||", 
+    RowBox[{
+     RowBox[{"!", "r"}], "&&", "k", "&&", "m"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.683220964592327*^9, 3.6832210635579576`*^9}, {
+  3.683221190231357*^9, 3.683221209146183*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TagBox[
+      TagBox[GridBox[{
+         {
+          TagBox["k",
+           HoldForm], 
+          TagBox["l",
+           HoldForm], 
+          TagBox["m",
+           HoldForm], 
+          TagBox["n",
+           HoldForm], 
+          TagBox["r",
+           HoldForm], 
+          TagBox[
+           RowBox[{
+            RowBox[{"!", "k"}], "||", "l", "||", 
+            RowBox[{"!", "m"}], "||", 
+            RowBox[{"(", 
+             RowBox[{"n", "&&", 
+              RowBox[{"!", "k"}]}], ")"}], "||", 
+            RowBox[{"!", "m"}], "||", "n", "||", 
+            RowBox[{"(", 
+             RowBox[{"r", "&&", 
+              RowBox[{"!", "k"}]}], ")"}], "||", 
+            RowBox[{"!", "m"}], "||", "n", "||", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"!", "r"}], "&&", "k", "&&", "m"}], ")"}]}],
+           HoldForm]},
+         {"True", "True", "True", "True", "True", "True"},
+         {"True", "True", "True", "True", "False", "True"},
+         {"True", "True", "True", "False", "True", "True"},
+         {"True", "True", "True", "False", "False", "True"},
+         {"True", "True", "False", "True", "True", "True"},
+         {"True", "True", "False", "True", "False", "True"},
+         {"True", "True", "False", "False", "True", "True"},
+         {"True", "True", "False", "False", "False", "True"},
+         {"True", "False", "True", "True", "True", "True"},
+         {"True", "False", "True", "True", "False", "True"},
+         {"True", "False", "True", "False", "True", "False"},
+         {"True", "False", "True", "False", "False", "True"},
+         {"True", "False", "False", "True", "True", "True"},
+         {"True", "False", "False", "True", "False", "True"},
+         {"True", "False", "False", "False", "True", "True"},
+         {"True", "False", "False", "False", "False", "True"},
+         {"False", "True", "True", "True", "True", "True"},
+         {"False", "True", "True", "True", "False", "True"},
+         {"False", "True", "True", "False", "True", "True"},
+         {"False", "True", "True", "False", "False", "True"},
+         {"False", "True", "False", "True", "True", "True"},
+         {"False", "True", "False", "True", "False", "True"},
+         {"False", "True", "False", "False", "True", "True"},
+         {"False", "True", "False", "False", "False", "True"},
+         {"False", "False", "True", "True", "True", "True"},
+         {"False", "False", "True", "True", "False", "True"},
+         {"False", "False", "True", "False", "True", "True"},
+         {"False", "False", "True", "False", "False", "True"},
+         {"False", "False", "False", "True", "True", "True"},
+         {"False", "False", "False", "True", "False", "True"},
+         {"False", "False", "False", "False", "True", "True"},
+         {"False", "False", "False", "False", "False", "True"}
+        },
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxDividers->{
+         "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[2.0999999999999996`]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}}],
+       {None, OutputFormsDump`HeadedColumns}],
+      Function[BoxForm`e$, 
+       TableForm[
+       BoxForm`e$, 
+        TableHeadings -> {
+         None, {$CellContext`k, $CellContext`l, $CellContext`m, \
+$CellContext`n, $CellContext`r, 
+           Or[
+            Not[$CellContext`k], $CellContext`l, 
+            Not[$CellContext`m], 
+            And[$CellContext`n, 
+             Not[$CellContext`k]], 
+            Not[$CellContext`m], $CellContext`n, 
+            And[$CellContext`r, 
+             Not[$CellContext`k]], 
+            Not[$CellContext`m], $CellContext`n, 
+            And[
+             Not[$CellContext`r], $CellContext`k, $CellContext`m]]}}]]]},
+    {
+     RowBox[{
+      RowBox[{"!", "k"}], "||", "l", "||", 
+      RowBox[{"!", "m"}], "||", "n", "||", 
+      RowBox[{"!", "r"}]}]}
+   },
+   DefaultBaseStyle->"Column",
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Column"]], "Output",
+ CellChangeTimes->{3.683221109446384*^9, 3.683221210164298*^9, 
+  3.683221262663294*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"boolStuff2", "[", 
+   RowBox[{"f1_Function", ",", "f2_Function"}], "]"}], ":=", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"Clear", "[", 
+     RowBox[{"k", ",", "l", ",", "m", ",", "n", ",", "r"}], "]"}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Column", "[", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"TableForm", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"BooleanTable", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"k", ",", "l", ",", "m", ",", "n", ",", "r", ",", 
+             RowBox[{"f1", "[", 
+              RowBox[{"k", ",", "l", ",", "m", ",", "n", ",", "r"}], "]"}], 
+             ",", 
+             RowBox[{"f2", "[", 
+              RowBox[{"k", ",", "l", ",", "m", ",", "n", ",", "r"}], "]"}]}], 
+            "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"k", ",", "l", ",", "m", ",", "n", ",", "r"}], "}"}]}], 
+          "]"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"TableHeadings", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"None", ",", 
+            RowBox[{"{", 
+             RowBox[{"k", ",", "l", ",", "m", ",", "n", ",", "r", ",", 
+              RowBox[{"f1", "[", 
+               RowBox[{"k", ",", "l", ",", "m", ",", "n", ",", "r"}], "]"}], 
+              ",", 
+              RowBox[{"f2", "[", 
+               RowBox[{"k", ",", "l", ",", "m", ",", "n", ",", "r"}], "]"}]}],
+              "}"}]}], "}"}]}]}], "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"BooleanMinimize", "[", 
+        RowBox[{"f1", "[", 
+         RowBox[{"k", ",", "l", ",", "m", ",", "n", ",", "r"}], "]"}], "]"}], 
+       ",", "\[IndentingNewLine]", 
+       RowBox[{"BooleanMinimize", "[", 
+        RowBox[{"f2", "[", 
+         RowBox[{"k", ",", "l", ",", "m", ",", "n", ",", "r"}], "]"}], 
+        "]"}]}], "}"}], "]"}]}], ")"}]}]], "Input",
+ CellChangeTimes->{{3.6832214883374367`*^9, 3.6832215313708363`*^9}, {
+  3.683221570297284*^9, 3.683221575516596*^9}, {3.6832216467782803`*^9, 
+  3.683221696009613*^9}, {3.683221929699239*^9, 3.683221976649034*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"boolStuff2", "[", 
+  RowBox[{
+   RowBox[{"Function", "[", 
+    RowBox[{
+     RowBox[{"!", "k"}], "||", "l", "||", 
+     RowBox[{"!", "m"}], "||", 
+     RowBox[{"n", "&&", 
+      RowBox[{"!", "k"}]}], "||", 
+     RowBox[{"!", "m"}], "||", "n", "||", 
+     RowBox[{"r", "&&", 
+      RowBox[{"!", "k"}]}], "||", 
+     RowBox[{"!", "m"}], "||", "n", "||", 
+     RowBox[{
+      RowBox[{"!", "r"}], "&&", "k", "&&", "m"}]}], "]"}], ",", 
+   RowBox[{"Function", "[", 
+    RowBox[{"k", "&&", "m", "&&", "n"}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.683221592100794*^9, 3.6832216092914352`*^9}, {
+  3.683221983168836*^9, 3.6832219838246593`*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TagBox[
+      TagBox[GridBox[{
+         {
+          TagBox["k",
+           HoldForm], 
+          TagBox["l",
+           HoldForm], 
+          TagBox["m",
+           HoldForm], 
+          TagBox["n",
+           HoldForm], 
+          TagBox["r",
+           HoldForm], 
+          TagBox[
+           RowBox[{
+            RowBox[{"!", "k"}], "||", "l", "||", 
+            RowBox[{"!", "m"}], "||", 
+            RowBox[{"(", 
+             RowBox[{"n", "&&", 
+              RowBox[{"!", "k"}]}], ")"}], "||", 
+            RowBox[{"!", "m"}], "||", "n", "||", 
+            RowBox[{"(", 
+             RowBox[{"r", "&&", 
+              RowBox[{"!", "k"}]}], ")"}], "||", 
+            RowBox[{"!", "m"}], "||", "n", "||", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"!", "r"}], "&&", "k", "&&", "m"}], ")"}]}],
+           HoldForm], 
+          TagBox[
+           RowBox[{"k", "&&", "m", "&&", "n"}],
+           HoldForm]},
+         {"True", "True", "True", "True", "True", "True", "True"},
+         {"True", "True", "True", "True", "False", "True", "True"},
+         {"True", "True", "True", "False", "True", "True", "False"},
+         {"True", "True", "True", "False", "False", "True", "False"},
+         {"True", "True", "False", "True", "True", "True", "False"},
+         {"True", "True", "False", "True", "False", "True", "False"},
+         {"True", "True", "False", "False", "True", "True", "False"},
+         {"True", "True", "False", "False", "False", "True", "False"},
+         {"True", "False", "True", "True", "True", "True", "True"},
+         {"True", "False", "True", "True", "False", "True", "True"},
+         {"True", "False", "True", "False", "True", "False", "False"},
+         {"True", "False", "True", "False", "False", "True", "False"},
+         {"True", "False", "False", "True", "True", "True", "False"},
+         {"True", "False", "False", "True", "False", "True", "False"},
+         {"True", "False", "False", "False", "True", "True", "False"},
+         {"True", "False", "False", "False", "False", "True", "False"},
+         {"False", "True", "True", "True", "True", "True", "False"},
+         {"False", "True", "True", "True", "False", "True", "False"},
+         {"False", "True", "True", "False", "True", "True", "False"},
+         {"False", "True", "True", "False", "False", "True", "False"},
+         {"False", "True", "False", "True", "True", "True", "False"},
+         {"False", "True", "False", "True", "False", "True", "False"},
+         {"False", "True", "False", "False", "True", "True", "False"},
+         {"False", "True", "False", "False", "False", "True", "False"},
+         {"False", "False", "True", "True", "True", "True", "False"},
+         {"False", "False", "True", "True", "False", "True", "False"},
+         {"False", "False", "True", "False", "True", "True", "False"},
+         {"False", "False", "True", "False", "False", "True", "False"},
+         {"False", "False", "False", "True", "True", "True", "False"},
+         {"False", "False", "False", "True", "False", "True", "False"},
+         {"False", "False", "False", "False", "True", "True", "False"},
+         {"False", "False", "False", "False", "False", "True", "False"}
+        },
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxDividers->{
+         "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[2.0999999999999996`]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}}],
+       {None, OutputFormsDump`HeadedColumns}],
+      Function[BoxForm`e$, 
+       TableForm[
+       BoxForm`e$, 
+        TableHeadings -> {
+         None, {$CellContext`k, $CellContext`l, $CellContext`m, \
+$CellContext`n, $CellContext`r, 
+           Or[
+            Not[$CellContext`k], $CellContext`l, 
+            Not[$CellContext`m], 
+            And[$CellContext`n, 
+             Not[$CellContext`k]], 
+            Not[$CellContext`m], $CellContext`n, 
+            And[$CellContext`r, 
+             Not[$CellContext`k]], 
+            Not[$CellContext`m], $CellContext`n, 
+            And[
+             Not[$CellContext`r], $CellContext`k, $CellContext`m]], 
+           And[$CellContext`k, $CellContext`m, $CellContext`n]}}]]]},
+    {
+     RowBox[{
+      RowBox[{"!", "k"}], "||", "l", "||", 
+      RowBox[{"!", "m"}], "||", "n", "||", 
+      RowBox[{"!", "r"}]}]},
+    {
+     RowBox[{"k", "&&", "m", "&&", "n"}]}
+   },
+   DefaultBaseStyle->"Column",
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Column"]], "Output",
+ CellChangeTimes->{3.683221610021595*^9, 3.6832216640424767`*^9, 
+  3.683221950566235*^9, 3.6832219893238487`*^9}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.683221715865116*^9, 3.683221717951847*^9}, {
+   3.683221792037698*^9, 3.683221841833391*^9}, 3.683222115504093*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"boolStuff3", "[", 
+   RowBox[{"f1_Function", ",", "f2_Function", ",", "vars_"}], "]"}], ":=", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"Clear", "[", 
+     RowBox[{"x", ",", "y", ",", "z"}], "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Column", "[", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"TableForm", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"BooleanTable", "[", 
+          RowBox[{
+           RowBox[{"Append", "[", 
+            RowBox[{"vars", ",", 
+             RowBox[{"f1", "[", 
+              RowBox[{"x", ",", "y"}], "]"}]}], "]"}], ",", 
+           RowBox[{"{", "vars", "}"}]}], "]"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"TableHeadings", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"None", ",", 
+            RowBox[{"{", 
+             RowBox[{"vars", ",", 
+              RowBox[{"f1", "[", "vars", "]"}], ",", 
+              RowBox[{"f2", "[", "vars", "]"}]}], "}"}]}], "}"}]}]}], "]"}], 
+       ","}], "\[IndentingNewLine]", "}"}], "]"}]}], ")"}]}]], "Input",
+ CellChangeTimes->{{3.68322184479916*^9, 3.683221845465694*^9}, {
+   3.683222130191234*^9, 3.68322217130688*^9}, {3.683222240749922*^9, 
+   3.6832222817302427`*^9}, {3.683222443364971*^9, 3.683222457105207*^9}, {
+   3.683222498420167*^9, 3.683222521245805*^9}, 3.683222562423558*^9, {
+   3.68322259669807*^9, 3.6832226145691338`*^9}, 3.683222668915243*^9, {
+   3.683222964680222*^9, 3.683223004904436*^9}, {3.683223051471672*^9, 
+   3.683223141116242*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"boolStuff3", "[", 
+  RowBox[{
+   RowBox[{"Function", "[", 
+    RowBox[{"x", "||", "y"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.683222285124421*^9, 3.6832223448405943`*^9}, {
+   3.683222632593425*^9, 3.68322268009233*^9}, {3.68322271395532*^9, 
+   3.683222779075592*^9}, {3.6832229957153378`*^9, 3.6832229983908863`*^9}, 
+   3.683223055916794*^9}],
+
+Cell[BoxData[
+ RowBox[{"boolStuff3", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"x", "||", "y"}], "&"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{
+  3.683222345275249*^9, {3.683222544955296*^9, 3.683222566693287*^9}, {
+   3.683222619186908*^9, 3.683222651381565*^9}, 3.6832227147340612`*^9, {
+   3.683222751696968*^9, 3.68322278020303*^9}, {3.683222990767623*^9, 
+   3.683223007706163*^9}, {3.683223056496421*^9, 3.683223143731367*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"boolorig2", "[", 
+   RowBox[{"f_Function", ",", "list_"}], "]"}], ":=", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"Clear", "[", 
+     RowBox[{"x", ",", "y"}], "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Column", "[", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"TableForm", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"BooleanTable", "[", 
+          RowBox[{
+           RowBox[{"Append", "[", 
+            RowBox[{"list", ",", 
+             RowBox[{"f", "[", "list", "]"}]}], "]"}], ",", "list"}], "]"}], 
+         ",", "\[IndentingNewLine]", 
+         RowBox[{"TableHeadings", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"None", ",", 
+            RowBox[{"Append", "[", 
+             RowBox[{"list", ",", 
+              RowBox[{"f", "[", "list", "]"}]}], "]"}]}], "}"}]}]}], "]"}], 
+       ","}], "\[IndentingNewLine]", "}"}], "]"}]}], 
+   ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"boolorig2", "[", 
+  RowBox[{
+   RowBox[{"Function", "[", 
+    RowBox[{"r", "||", "j"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", "j", ",", "n"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.683223167322124*^9, 3.6832231982868233`*^9}, {
+  3.68322323508016*^9, 3.6832232458705177`*^9}, {3.683223303904249*^9, 
+  3.683223409815507*^9}, {3.683223449900221*^9, 3.683223752606889*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TagBox[
+      TagBox[GridBox[{
+         {
+          TagBox["r",
+           HoldForm], 
+          TagBox["j",
+           HoldForm], 
+          TagBox["n",
+           HoldForm], 
+          TagBox[
+           RowBox[{"r", "||", "j"}],
+           HoldForm]},
+         {"True", "True", "True", "True"},
+         {"True", "True", "False", "True"},
+         {"True", "False", "True", "True"},
+         {"True", "False", "False", "True"},
+         {"False", "True", "True", "True"},
+         {"False", "True", "False", "True"},
+         {"False", "False", "True", "False"},
+         {"False", "False", "False", "False"}
+        },
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxDividers->{
+         "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[2.0999999999999996`]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}}],
+       {None, OutputFormsDump`HeadedColumns}],
+      Function[BoxForm`e$, 
+       TableForm[
+       BoxForm`e$, 
+        TableHeadings -> {
+         None, {$CellContext`r, $CellContext`j, $CellContext`n, 
+           Or[$CellContext`r, $CellContext`j]}}]]]},
+    {""}
+   },
+   DefaultBaseStyle->"Column",
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Column"]], "Output",
+ CellChangeTimes->{
+  3.6832234115007763`*^9, {3.683223458092917*^9, 3.683223468760007*^9}, {
+   3.683223626712481*^9, 3.683223753008909*^9}}]
+}, Open  ]]
+},
+WindowSize->{992, 1100},
+WindowMargins->{{-10, Automatic}, {Automatic, -10}},
+FrontEndVersion->"10.4 for Linux x86 (64-bit) (April 11, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 418, 10, 32, "Input"],
+Cell[1001, 34, 2527, 73, 90, "Output"]
+}, Open  ]],
+Cell[3543, 110, 1334, 37, 77, "Input"],
+Cell[CellGroupData[{
+Cell[4902, 151, 181, 4, 32, "Input"],
+Cell[5086, 157, 1654, 50, 132, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6777, 212, 290, 6, 32, "Input"],
+Cell[7070, 220, 1791, 53, 132, "Output"]
+}, Open  ]],
+Cell[8876, 276, 1480, 37, 77, "Input"],
+Cell[CellGroupData[{
+Cell[10381, 317, 201, 4, 32, "Input"],
+Cell[10585, 323, 3656, 82, 594, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14278, 410, 559, 15, 32, "Input"],
+Cell[14840, 427, 4568, 108, 595, "Output"]
+}, Open  ]],
+Cell[19423, 538, 2105, 48, 165, "Input"],
+Cell[CellGroupData[{
+Cell[21553, 590, 670, 18, 55, "Input"],
+Cell[22226, 610, 5081, 114, 613, "Output"]
+}, Open  ]],
+Cell[27322, 727, 164, 2, 32, "Input"],
+Cell[27489, 731, 1542, 34, 143, "Input"],
+Cell[CellGroupData[{
+Cell[29056, 769, 449, 10, 32, "Input"],
+Cell[29508, 781, 501, 11, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30046, 797, 1379, 35, 165, "Input"],
+Cell[31428, 834, 1880, 53, 218, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
